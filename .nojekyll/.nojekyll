@@ -1,0 +1,6 @@
+# This file tells GitHub Pages to skip Jekyll and serve the static site as-is.
+# Without it, Jekyll tries to render README.md as index.html and collides
+# with the site's own index.html.
+
+
+
