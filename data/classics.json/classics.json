@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1606.07792",
+    "title": "Wide & Deep Learning for Recommender Systems",
+    "authors": ["Heng-Tze Cheng", "Levent Koc", "Jeremiah Harmsen", "Tal Shaked", "Tushar Chandra", "Hrishi Aradhye", "Glen Anderson", "Greg Corrado", "Wei Chai", "Mustafa Ispir", "Rohan Anil", "Zakaria Haque", "Lichan Hong", "Vihan Jain", "Xiaobing Liu", "Hemal Shah"],
+    "company": "Google",
+    "topics": ["Ranking", "CTR/CVR Prediction", "Representation Learning"],
+    "ads": false,
+    "summary": "Wide & Deep learning jointly trains a wide linear model for memorisation and a deep neural network for generalisation. It was deployed in Google Play app recommendations and improved app acquisition in online experiments. The paper remains a standard starting point for industrial recommender and ads ranking systems.",
+    "citations": 5800,
+    "url": "https://arxiv.org/abs/1606.07792",
+    "pdf": "https://arxiv.org/pdf/1606.07792",
+    "published": "2016-06-24",
+    "week": "2016-W25"
+  },
+  {
+    "id": "1703.04247",
+    "title": "DeepFM: A Factorization-Machine based Neural Network for CTR Prediction",
+    "authors": ["Huifeng Guo", "Ruiming Tang", "Yunming Ye", "Zhenguo Li", "Xiuqiang He"],
+    "company": "Huawei",
+    "topics": ["CTR/CVR Prediction", "Representation Learning", "Ranking"],
+    "ads": true,
+    "summary": "DeepFM combines factorisation machines with deep neural networks to learn both low- and high-order feature interactions for click-through-rate prediction. It needs no manual feature engineering and outperformed logistic regression, FM, and other deep models on Criteo and MovieLens data. It is widely used as a baseline for ads CTR modelling.",
+    "citations": 3100,
+    "url": "https://arxiv.org/abs/1703.04247",
+    "pdf": "https://arxiv.org/pdf/1703.04247",
+    "published": "2017-03-14",
+    "week": "2017-W11"
+  },
+  {
+    "id": "1609.01010",
+    "title": "Deep Neural Networks for YouTube Recommendations",
+    "authors": ["Paul Covington", "Jay Adams", "Emre Sargin"],
+    "company": "Google",
+    "topics": ["Sequence Modeling", "Ranking", "Retrieval"],
+    "ads": false,
+    "summary": "YouTube's recommendation system uses deep candidate generation followed by a deep ranking network, learning from user watch history, search, and context. The two-stage design scales to billions of videos and users while personalising recommendations. It is one of the most-cited descriptions of a production recommender system.",
+    "citations": 4100,
+    "url": "https://arxiv.org/abs/1609.01010",
+    "pdf": "https://arxiv.org/pdf/1609.01010",
+    "published": "2016-09-03",
+    "week": "2016-W35"
+  }
+]
