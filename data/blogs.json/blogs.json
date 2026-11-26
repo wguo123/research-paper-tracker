@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Scaling Ads Ranking with Foundation Models at Meta",
+    "source": "Meta Engineering",
+    "url": "https://engineering.fb.com/2026/11/20/ml-applications/scaling-ads-ranking-foundation-models/",
+    "date": "2026-11-20",
+    "summary": "Meta engineers describe how foundation models are being used to rank ads, sharing the trade-offs between model size, latency, and auction outcomes. The post covers feature design, training data, and how the system is evaluated before shipping. A useful practical companion to the week's arXiv papers on ranking and targeting.",
+    "topics": ["Ranking", "Foundation Models", "Targeting"],
+    "ads": true
+  },
+  {
+    "title": "How Netflix Personalises the Home Page with Sequence Models",
+    "source": "Netflix TechBlog",
+    "url": "https://netflixtechblog.com/how-netflix-personalises-the-home-page-with-sequence-models-2026/",
+    "date": "2026-11-18",
+    "summary": "Netflix explains how sequence modelling over viewing history powers home-page personalisation, from candidate generation to ranking. The post discusses cold-start handling, diversity, and the metrics the team watches in A/B tests. It is a clear industry view of sequence modelling in production recommendation.",
+    "topics": ["Sequence Modeling", "Ranking", "User Understanding"],
+    "ads": false
+  }
+]
