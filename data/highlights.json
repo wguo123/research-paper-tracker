@@ -1,7 +1,1 @@
-[
-  {
-    "week": "2026-W48",
-    "paper_id": "2511.18432",
-    "why": "Generative retrieval could replace the classic retrieve-then-rank pipeline in large-scale recommenders: this Google paper shows a foundation model directly generating item identifiers with higher recall at practical latency. If the approach generalises, it changes how retrieval, ranking, and serving are designed together."
-  }
-]
+[]
