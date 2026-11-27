@@ -1,5 +1,71 @@
 [
   {
+    "id": "1708.05031",
+    "title": "Neural Collaborative Filtering",
+    "authors": [
+      "Xiangnan He",
+      "Lizi Liao",
+      "Hanwang Zhang",
+      "Liqiang Nie",
+      "Xia Hu"
+    ],
+    "company": null,
+    "topics": [
+      "Representation Learning",
+      "Ranking"
+    ],
+    "ads": false,
+    "summary": "Innovation: NCF replaces matrix factorisation's inner product with a neural network (GMF + MLP) that learns the user–item interaction function. Why it matters: the paper that pushed deep learning into collaborative filtering; its learned interaction view underlies modern embedding-based retrieval and ranking.",
+    "citations": 7649,
+    "url": "https://arxiv.org/abs/1708.05031",
+    "pdf": "https://arxiv.org/pdf/1708.05031",
+    "published": "2017-08-16",
+    "week": "2017-W33"
+  },
+  {
+    "id": "2002.02126",
+    "title": "LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation",
+    "authors": [
+      "Xiangnan He",
+      "Kuan Deng",
+      "Xiang Wang",
+      "Yan Li",
+      "Yongdong Zhang"
+    ],
+    "company": null,
+    "topics": [
+      "Graph Learning",
+      "Representation Learning"
+    ],
+    "ads": false,
+    "summary": "Innovation: LightGCN strips feature transformation and nonlinear activation from graph convolution, keeping only neighbourhood aggregation over the user–item graph. Why it matters: the standard strong baseline for graph-based recommendation and retrieval.",
+    "citations": 6115,
+    "url": "https://arxiv.org/abs/2002.02126",
+    "pdf": "https://arxiv.org/pdf/2002.02126",
+    "published": "2020-02-06",
+    "week": "2020-W06"
+  },
+  {
+    "id": "1808.09781",
+    "title": "Self-Attentive Sequential Recommendation",
+    "authors": [
+      "Wang-Cheng Kang",
+      "Julian McAuley"
+    ],
+    "company": null,
+    "topics": [
+      "Sequence Modeling",
+      "Ranking"
+    ],
+    "ads": false,
+    "summary": "Innovation: SASRec uses a causal self-attention Transformer to model user behaviour sequences, balancing long-range context against recent-item signals. Why it matters: the reference sequence model that later industrial ranking stacks build on.",
+    "citations": 4686,
+    "url": "https://arxiv.org/abs/1808.09781",
+    "pdf": "https://arxiv.org/pdf/1808.09781",
+    "published": "2018-08-20",
+    "week": "2018-W34"
+  },
+  {
     "id": "1606.07792",
     "title": "Wide & Deep Learning for Recommender Systems",
     "authors": [
@@ -35,6 +101,30 @@
     "week": "2016-W25"
   },
   {
+    "id": "1806.01973",
+    "title": "Graph Convolutional Neural Networks for Web-Scale Recommender Systems",
+    "authors": [
+      "Rex Ying",
+      "Ruining He",
+      "Kaifeng Chen",
+      "Pong Eksombatchai",
+      "William L. Hamilton"
+    ],
+    "company": "Pinterest",
+    "topics": [
+      "Graph Learning",
+      "Retrieval",
+      "Representation Learning"
+    ],
+    "ads": false,
+    "summary": "Innovation: PinSage runs graph convolutions on Pinterest's billion-scale pin graph with importance-based neighbourhood sampling and MapReduce inference. Why it matters: the first web-scale graph embedding system for retrieval, deployed in Pinterest candidate generation.",
+    "citations": 4399,
+    "url": "https://arxiv.org/abs/1806.01973",
+    "pdf": "https://arxiv.org/pdf/1806.01973",
+    "published": "2018-06-06",
+    "week": "2018-W23"
+  },
+  {
     "id": "10.1145/2959100.2959190",
     "title": "Deep Neural Networks for YouTube Recommendations",
     "authors": [
@@ -55,6 +145,51 @@
     "pdf": "https://doi.org/10.1145/2959100.2959190",
     "published": "2016-09-15",
     "week": "2016-W37"
+  },
+  {
+    "id": "1905.08108",
+    "title": "Neural Graph Collaborative Filtering",
+    "authors": [
+      "Xiang Wang",
+      "Xiangnan He",
+      "Meng Wang",
+      "Fuli Feng",
+      "Tat-Seng Chua"
+    ],
+    "company": null,
+    "topics": [
+      "Graph Learning",
+      "Representation Learning"
+    ],
+    "ads": false,
+    "summary": "Innovation: NGCF propagates embeddings over the user–item graph with interaction-aware messages, encoding high-order connectivity into the representations. Why it matters: established graph propagation as a core technique for collaborative retrieval.",
+    "citations": 4270,
+    "url": "https://arxiv.org/abs/1905.08108",
+    "pdf": "https://arxiv.org/pdf/1905.08108",
+    "published": "2019-05-20",
+    "week": "2019-W21"
+  },
+  {
+    "id": "1904.06690",
+    "title": "BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer",
+    "authors": [
+      "Fei Sun",
+      "Jun Liu",
+      "Jian Wu",
+      "Changhua Pei",
+      "Xiao Lin"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "Sequence Modeling"
+    ],
+    "ads": false,
+    "summary": "Innovation: BERT4Rec trains bidirectional Transformers with a Cloze (masked-item) objective over user behaviour sequences. Why it matters: brought bidirectional sequence modelling to recommendation, influencing user-understanding models in ranking.",
+    "citations": 3928,
+    "url": "https://arxiv.org/abs/1904.06690",
+    "pdf": "https://arxiv.org/pdf/1904.06690",
+    "published": "2019-04-14",
+    "week": "2019-W15"
   },
   {
     "id": "1703.04247",
@@ -110,6 +245,28 @@
     "week": "2017-W25"
   },
   {
+    "id": "1708.05123",
+    "title": "Deep & Cross Network for Ad Click Predictions",
+    "authors": [
+      "Ruoxi Wang",
+      "Bin Fu",
+      "Gang Fu",
+      "Mingliang Wang"
+    ],
+    "company": "Google",
+    "topics": [
+      "CTR/CVR Prediction",
+      "Ranking"
+    ],
+    "ads": true,
+    "summary": "Innovation: the cross network explicitly learns bounded-degree feature interactions alongside a deep network for ad click prediction. Why it matters: Google's feature-crossing design for ads ranking, and the predecessor of DCN-V2 used across web-scale ranking.",
+    "citations": 1646,
+    "url": "https://arxiv.org/abs/1708.05123",
+    "pdf": "https://arxiv.org/pdf/1708.05123",
+    "published": "2017-08-17",
+    "week": "2017-W33"
+  },
+  {
     "id": "1809.03672",
     "title": "Deep Interest Evolution Network for Click-Through Rate Prediction",
     "authors": [
@@ -135,6 +292,74 @@
     "pdf": "https://arxiv.org/pdf/1809.03672",
     "published": "2018-09-11",
     "week": "2018-W37"
+  },
+  {
+    "id": "1803.05170",
+    "title": "xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems",
+    "authors": [
+      "Jianxun Lian",
+      "Xiaohuan Zhou",
+      "Fuzheng Zhang",
+      "Zhongxia Chen",
+      "Xing Xie"
+    ],
+    "company": "Microsoft",
+    "topics": [
+      "CTR/CVR Prediction",
+      "Ranking"
+    ],
+    "ads": true,
+    "summary": "Innovation: xDeepFM's Compressed Interaction Network models vector-wise explicit high-order feature interactions, combined with a deep component. Why it matters: a standard explicit-interaction architecture for CTR prediction in ads ranking.",
+    "citations": 1308,
+    "url": "https://arxiv.org/abs/1803.05170",
+    "pdf": "https://arxiv.org/pdf/1803.05170",
+    "published": "2018-03-14",
+    "week": "2018-W11"
+  },
+  {
+    "id": "1810.11921",
+    "title": "AutoInt: Automatic Feature Interaction Learning via Self-Attentive Neural Networks",
+    "authors": [
+      "Weiping Song",
+      "Chence Shi",
+      "Zhiping Xiao",
+      "Zhijian Duan",
+      "Yewen Xu"
+    ],
+    "company": null,
+    "topics": [
+      "CTR/CVR Prediction"
+    ],
+    "ads": true,
+    "summary": "Innovation: AutoInt uses multi-head self-attention to learn explicit feature interactions in low-dimensional space for CTR prediction. Why it matters: showed attention-based interaction modelling as an alternative to FM-style crosses in ads models.",
+    "citations": 1186,
+    "url": "https://arxiv.org/abs/1810.11921",
+    "pdf": "https://arxiv.org/pdf/1810.11921",
+    "published": "2018-10-29",
+    "week": "2018-W44"
+  },
+  {
+    "id": "10.1145/2487575.2488200",
+    "title": "Ad Click Prediction: A View from the Trenches",
+    "authors": [
+      "H. B. McMahan",
+      "Gary Holt",
+      "D. Sculley",
+      "Michael Young",
+      "D. Ebner"
+    ],
+    "company": "Google",
+    "topics": [
+      "CTR/CVR Prediction",
+      "Targeting"
+    ],
+    "ads": true,
+    "summary": "Innovation: FTRL-Proximal online learning with per-coordinate learning rates, plus Google's production lessons on feature hashing, calibration, and progressive validation for ad click prediction. Why it matters: the foundational large-scale online-learning recipe behind ads CTR systems. Note: KDD '13 paper, not on arXiv — link goes to the DOI.",
+    "citations": 1075,
+    "url": "https://doi.org/10.1145/2487575.2488200",
+    "pdf": "https://doi.org/10.1145/2487575.2488200",
+    "published": "2013-08-11",
+    "week": "2013-W32"
   },
   {
     "id": "1906.00091",
@@ -206,6 +431,50 @@
     "week": "2020-W34"
   },
   {
+    "id": "1611.00144",
+    "title": "Product-based Neural Networks for User Response Prediction",
+    "authors": [
+      "Yanru Qu",
+      "Han Cai",
+      "Kan Ren",
+      "Weinan Zhang",
+      "Yong Yu"
+    ],
+    "company": null,
+    "topics": [
+      "CTR/CVR Prediction"
+    ],
+    "ads": true,
+    "summary": "Innovation: PNN inserts a product layer capturing pairwise feature interactions (inner and outer products) before the MLP for user response prediction. Why it matters: an early explicit-interaction design for ads response prediction, still a common CTR baseline.",
+    "citations": 809,
+    "url": "https://arxiv.org/abs/1611.00144",
+    "pdf": "https://arxiv.org/pdf/1611.00144",
+    "published": "2016-11-01",
+    "week": "2016-W44"
+  },
+  {
+    "id": "1804.07931",
+    "title": "Entire Space Multi-Task Model: An Effective Approach for Estimating Post-Click Conversion Rate",
+    "authors": [
+      "Xiao Ma",
+      "Liqin Zhao",
+      "Guan Huang",
+      "Zhi Wang",
+      "Zelin Hu"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "CTR/CVR Prediction"
+    ],
+    "ads": true,
+    "summary": "Innovation: ESMM models CTR and post-click CVR jointly over the entire impression space, avoiding sample-selection bias and data sparsity in CVR estimation. Why it matters: the standard multi-task design for conversion prediction in ads ranking and bidding.",
+    "citations": 600,
+    "url": "https://arxiv.org/abs/1804.07931",
+    "pdf": "https://arxiv.org/pdf/1804.07931",
+    "published": "2018-04-21",
+    "week": "2018-W16"
+  },
+  {
     "id": "1904.08030",
     "title": "Multi-Interest Network with Dynamic Routing for Recommendation at Tmall",
     "authors": [
@@ -233,6 +502,29 @@
     "pdf": "https://arxiv.org/pdf/1904.08030",
     "published": "2019-04-17",
     "week": "2019-W16"
+  },
+  {
+    "id": "1803.02349",
+    "title": "Billion-scale Commodity Embedding for E-commerce Recommendation in Alibaba",
+    "authors": [
+      "Jizhe Wang",
+      "Pipei Huang",
+      "Huan Zhao",
+      "Zhibo Zhang",
+      "Binqiang Zhao"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "Representation Learning",
+      "Retrieval"
+    ],
+    "ads": false,
+    "summary": "Innovation: EGES learns item embeddings from user behaviour sequences with side information (Graph Embedding with Side information) at billion-item scale for Taobao. Why it matters: industrial item-embedding retrieval used in Alibaba candidate generation.",
+    "citations": 589,
+    "url": "https://arxiv.org/abs/1803.02349",
+    "pdf": "https://arxiv.org/pdf/1803.02349",
+    "published": "2018-03-06",
+    "week": "2018-W10"
   },
   {
     "id": "2305.05065",
@@ -267,6 +559,29 @@
     "week": "2023-W19"
   },
   {
+    "id": "1905.06874",
+    "title": "Behavior Sequence Transformer for E-commerce Recommendation in Alibaba",
+    "authors": [
+      "Qiwei Chen",
+      "Huan Zhao",
+      "Wei Li",
+      "Pipei Huang",
+      "Wenwu Ou"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "Sequence Modeling",
+      "Ranking"
+    ],
+    "ads": false,
+    "summary": "Innovation: BST applies a Transformer block over user behaviour sequences inside Taobao's ranking model. Why it matters: early production evidence that Transformer sequence modelling lifts CTR in large-scale ranking.",
+    "citations": 554,
+    "url": "https://arxiv.org/abs/1905.06874",
+    "pdf": "https://arxiv.org/pdf/1905.06874",
+    "published": "2019-05-15",
+    "week": "2019-W20"
+  },
+  {
     "id": "2006.05639",
     "title": "Search-based User Interest Modeling with Lifelong Sequential Behavior Data for Click-Through Rate Prediction",
     "authors": [
@@ -292,6 +607,30 @@
     "pdf": "https://arxiv.org/pdf/2006.05639",
     "published": "2020-06-10",
     "week": "2020-W24"
+  },
+  {
+    "id": "2005.09347",
+    "title": "Controllable Multi-Interest Framework for Recommendation",
+    "authors": [
+      "Yukuo Cen",
+      "Jianwei Zhang",
+      "Xu Zou",
+      "Chang Zhou",
+      "Hongxia Yang"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "User Understanding",
+      "Retrieval",
+      "Representation Learning"
+    ],
+    "ads": false,
+    "summary": "Innovation: ComiRec extracts multiple interest vectors per user via dynamic routing or self-attention, with a controllable aggregation step for candidate matching. Why it matters: multi-interest retrieval deployed in Alibaba's matching stage, extending the MIND line.",
+    "citations": 453,
+    "url": "https://arxiv.org/abs/2005.09347",
+    "pdf": "https://arxiv.org/pdf/2005.09347",
+    "published": "2020-05-19",
+    "week": "2020-W21"
   },
   {
     "id": "2402.17152",
@@ -352,6 +691,49 @@
     "week": "2025-W09"
   },
   {
+    "id": "1905.09433",
+    "title": "FiBiNET: Combining Feature Importance and Bilinear feature Interaction for Click-Through Rate Prediction",
+    "authors": [
+      "Tongwen Huang",
+      "Zhiqi Zhang",
+      "Junlin Zhang"
+    ],
+    "company": "Sina Weibo",
+    "topics": [
+      "CTR/CVR Prediction"
+    ],
+    "ads": true,
+    "summary": "Innovation: FiBiNET combines SENet-style feature-importance recalibration with bilinear feature interactions for CTR prediction. Why it matters: feature-importance plus interaction modelling used in Sina Weibo's ads CTR models.",
+    "citations": 394,
+    "url": "https://arxiv.org/abs/1905.09433",
+    "pdf": "https://arxiv.org/pdf/1905.09433",
+    "published": "2019-05-23",
+    "week": "2019-W21"
+  },
+  {
+    "id": "1801.02294",
+    "title": "Learning Tree-based Deep Model for Recommender Systems",
+    "authors": [
+      "Han Zhu",
+      "Xiang Li",
+      "Pengye Zhang",
+      "Guozheng Li",
+      "Jie He"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "Retrieval",
+      "Ranking"
+    ],
+    "ads": false,
+    "summary": "Innovation: TDM organises items in a maximum-heap tree and retrieves by beam search over tree levels, jointly learning the index structure and the model. Why it matters: tree-based retrieval became a standard candidate-generation approach at Alibaba scale.",
+    "citations": 372,
+    "url": "https://arxiv.org/abs/1801.02294",
+    "pdf": "https://arxiv.org/pdf/1801.02294",
+    "published": "2018-01-08",
+    "week": "2018-W02"
+  },
+  {
     "id": "2403.02545",
     "title": "Wukong: Towards a Scaling Law for Large-Scale Recommendation",
     "authors": [
@@ -384,6 +766,28 @@
     "pdf": "https://arxiv.org/pdf/2403.02545",
     "published": "2024-03-04",
     "week": "2024-W10"
+  },
+  {
+    "id": "1810.09591",
+    "title": "Applying Deep Learning To Airbnb Search",
+    "authors": [
+      "Malay Haldar",
+      "Mustafa Abdool",
+      "Prashant Ramanathan",
+      "Tao Xu",
+      "Shulin Yang"
+    ],
+    "company": "Airbnb",
+    "topics": [
+      "Ranking"
+    ],
+    "ads": false,
+    "summary": "Innovation: Airbnb's account of evolving search ranking from gradient-boosted trees to deep networks, including embedding-based personalisation and the production lessons learned. Why it matters: a candid industrial ranking case study — what actually moved bookings at Airbnb scale.",
+    "citations": 100,
+    "url": "https://arxiv.org/abs/1810.09591",
+    "pdf": "https://arxiv.org/pdf/1810.09591",
+    "published": "2018-10-22",
+    "week": "2018-W43"
   },
   {
     "id": "2203.11014",
