@@ -1,7 +1,1 @@
-[
-  {
-    "week": "2026-W48",
-    "paper_id": "2611.11955",
-    "why": "Top-ranked this week: \"CHO-Bench: How Do Context Hints Affect Ad Rankings in LLM Advertising?\". ad ranking decides which ads win impressions; better ordering lifts CTR and revenue per session."
-  }
-]
+[{"paper_id":"2611.25659","week":"2026-W48","why":"Top-ranked this week: \"DNA: Unlocking Depth Scaling in CTR Models\". It offers long-sequence search and ad rankers a way to make added depth actually improve quality instead of paying for more layers with flat AUC gains."}]
