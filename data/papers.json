@@ -1,230 +1,231 @@
 [
   {
-    "id": "2611.28604",
-    "title": "MADRec: Reliable Multi-Agent Reasoning with Evidence-Grounded Debate for Recommendation",
+    "id": "2611.11955",
+    "title": "CHO-Bench: How Do Context Hints Affect Ad Rankings in LLM Advertising?",
     "authors": [
-      "Zunlong Liu",
-      "Weijie Feng",
-      "Jingzhi Li",
-      "Lei Zhu",
-      "Zhiyong Cheng",
-      "Meng Wang"
+      "Shiqi Zhang",
+      "Yang Fei",
+      "Xiaokui Xiao"
     ],
     "company": null,
     "topics": [
-      "Retrieval",
-      "Ranking",
-      "LLM in RecSys"
+      "Ranking"
     ],
-    "ads": false,
-    "summary": "Innovation: To address this issue, we propose Multi-Agent Debate-based Recommendation (MADRec), an evidence-grounded multi-agent framework that enhances the reliability of multi-agent recommendation reasoning. Why it matters: candidate generation sets the recall ceiling for everything downstream in the recommendation pipeline.",
+    "ads": true,
+    "summary": "Innovation: Drawing on established marketing frameworks, we develop seven context hint generation strategies covering What, Who, and When, along with a Unified strategy that combines all seven dimensions. Why it matters: ad ranking decides which ads win impressions; better ordering lifts CTR and revenue per session.",
     "citations": 0,
-    "url": "https://arxiv.org/abs/2611.28604",
-    "pdf": "https://arxiv.org/pdf/2611.28604",
-    "published": "2026-11-21",
+    "url": "https://arxiv.org/abs/2611.11955",
+    "pdf": "https://arxiv.org/pdf/2611.11955",
+    "published": "2026-11-09",
     "week": "2026-W48"
   },
   {
-    "id": "2611.32780",
-    "title": "C3H: Compression-to-Consensus Criteria Hijacking in Multimodal LLM Recommender Systems",
+    "id": "2611.08840",
+    "title": "What Matters for LLM Persona Simulation: Signal Form in Cold-Start E-Commerce Advertising",
     "authors": [
-      "Guowei Guan",
-      "Yurong Hao",
-      "Jiaming Zhang",
-      "Fuyao Zhang",
-      "Wei Yang Bryan Lim"
+      "Jiwoo Choi",
+      "In Ik Lee",
+      "Woo Sung Seo",
+      "Minho Lee",
+      "Yun Young Choi"
     ],
     "company": null,
     "topics": [
-      "Ranking",
-      "LLM in RecSys"
+      "LLM in RecSys",
+      "CTR/CVR Prediction"
     ],
-    "ads": false,
-    "summary": "Innovation: In this paper, we introduce C3H, a novel inference-time attack that exploits this vulnerability. Why it matters: better ordering of candidates directly lifts clicks, conversions, and user satisfaction.",
+    "ads": true,
+    "summary": "Innovation: Estimating advertising performance in cold-start settings is challenging because historical logs are unavailable before launch. Why it matters: shows how LLMs can be used inside ads ranking/targeting rather than only in content recsys.",
     "citations": 0,
-    "url": "https://arxiv.org/abs/2611.32780",
-    "pdf": "https://arxiv.org/pdf/2611.32780",
-    "published": "2026-11-24",
+    "url": "https://arxiv.org/abs/2611.08840",
+    "pdf": "https://arxiv.org/pdf/2611.08840",
+    "published": "2026-11-06",
     "week": "2026-W48"
   },
   {
-    "id": "2611.31951",
-    "title": "User-Adaptive Fusion of Multiple Foundation Models for Recommender Systems",
+    "id": "2611.24283",
+    "title": "X-split Argus: Learning Reusable History Tokens for Efficient CTR Prediction",
     "authors": [
-      "Sunwoo Kim",
-      "Hyunjin Hwang",
-      "Geon Lee",
-      "Kyungho Kim",
-      "Kijung Shin"
-    ],
-    "company": null,
-    "topics": [
-      "Foundation Models",
-      "Sequence Modeling"
-    ],
-    "ads": false,
-    "summary": "Innovation: Motivated by this observation, we introduce UF2O, a user-adaptive approach for fusing multiple foundation models for recommendation. Why it matters: a shared foundation model could serve ranking, retrieval, and targeting from one backbone.",
-    "citations": 0,
-    "url": "https://arxiv.org/abs/2611.31951",
-    "pdf": "https://arxiv.org/pdf/2611.31951",
-    "published": "2026-11-24",
-    "week": "2026-W48"
-  },
-  {
-    "id": "2611.30839",
-    "title": "SARA: An Auditor-in-the-Loop LLM Recommender for Sustainability Reports",
-    "authors": [
-      "Lars Hillebrand",
-      "Thiago B. F. de Oliveira",
-      "Tim Dilmaghani",
-      "Mohamed Khaled",
-      "Writwick Das",
-      "Rafet Sifa"
-    ],
-    "company": null,
-    "topics": [
-      "LLM in RecSys"
-    ],
-    "ads": false,
-    "summary": "Innovation: We present SARA (Sustainability Reporting Assistant), a human-in-the-loop recommender system delivered as a Microsoft Word add-in that recommends, for each requirement, the passages addressing it and… Why it matters: shows what LLMs add beyond classic ID-based models in production-style recsys.",
-    "citations": 0,
-    "url": "https://arxiv.org/abs/2611.30839",
-    "pdf": "https://arxiv.org/pdf/2611.30839",
-    "published": "2026-11-23",
-    "week": "2026-W48"
-  },
-  {
-    "id": "2611.29462",
-    "title": "MoR4Rec: Mixture-of-Recursion for Sequential Recommendation",
-    "authors": [
-      "Tiwari Ankit Satyaprakash",
-      "Adamya Shyam",
-      "Vikas Kumar",
-      "Bharti Rana",
-      "Venkateswara Rao Kagita"
-    ],
-    "company": null,
-    "topics": [
-      "Sequence Modeling"
-    ],
-    "ads": false,
-    "summary": "Innovation: To address this issue, we propose MoR4Rec, a sequential recommendation framework based on a Mixture-of-Recursion paradigm, which enables item-wise adaptive computation through a shared transformer… Why it matters: richer sequence models capture intent as it evolves over time.",
-    "citations": 0,
-    "url": "https://arxiv.org/abs/2611.29462",
-    "pdf": "https://arxiv.org/pdf/2611.29462",
-    "published": "2026-11-22",
-    "week": "2026-W48"
-  },
-  {
-    "id": "2611.28379",
-    "title": "Beyond Relevance: An Empirical Study of Multimodal LLMs for Diversity-Aware Recommendation Reranking",
-    "authors": [
-      "Chengkai Liu",
-      "Yan Fu",
-      "Huiyuan Chen",
-      "Sheikh Sarwar",
-      "Qilin Qi"
-    ],
-    "company": null,
-    "topics": [
-      "Sequence Modeling",
-      "Ranking",
-      "LLM in RecSys"
-    ],
-    "ads": false,
-    "summary": "Innovation: Large language models (LLMs) have emerged as promising rerankers for recommendation, yet most existing approaches rely on textual item descriptions and primarily focus on relevance. Why it matters: richer sequence models capture intent as it evolves over time.",
-    "citations": 0,
-    "url": "https://arxiv.org/abs/2611.28379",
-    "pdf": "https://arxiv.org/pdf/2611.28379",
-    "published": "2026-11-20",
-    "week": "2026-W48"
-  },
-  {
-    "id": "2611.34436",
-    "title": "Grounding User Preferences in Shared Multimodal Concepts for Recommendation",
-    "authors": [
-      "Ao Xu",
-      "Jinhui Huang",
-      "Wenqiang Tang",
-      "Tiehua Mei",
-      "Hongru Hou",
-      "Hengrui Chen",
-      "Jiaqing Liang",
-      "Deqing Yang"
-    ],
-    "company": null,
-    "topics": [
-      "LLM in RecSys"
-    ],
-    "ads": false,
-    "summary": "Innovation: We introduce MKGE, a multimodal knowledge graph framework that represents these factors as canonical, addressable concepts. Why it matters: shows what LLMs add beyond classic ID-based models in production-style recsys.",
-    "citations": 0,
-    "url": "https://arxiv.org/abs/2611.34436",
-    "pdf": "https://arxiv.org/pdf/2611.34436",
-    "published": "2026-11-25",
-    "week": "2026-W48"
-  },
-  {
-    "id": "2611.34330",
-    "title": "RecField: Embedding Recommendations into Spatial Movie Organization as Affordances for Serendipitous Encounters",
-    "authors": [
-      "Kenta Oku"
-    ],
-    "company": null,
-    "topics": [],
-    "ads": false,
-    "summary": "Innovation: We propose RecField, a spatial movie organization interface where users freely arrange movies into collection zones. Why it matters: relevant to how candidates are retrieved, ranked, and served to users.",
-    "citations": 0,
-    "url": "https://arxiv.org/abs/2611.34330",
-    "pdf": "https://arxiv.org/pdf/2611.34330",
-    "published": "2026-11-25",
-    "week": "2026-W48"
-  },
-  {
-    "id": "2611.33036",
-    "title": "Towards Realistic Evaluation of Uncertainty Quantification for LLM-Based Recommender Systems",
-    "authors": [
-      "Hao Wu",
-      "Sipeng Chen",
-      "Weikai Li",
-      "Tianyi Chen",
-      "Qiancheng Yang",
-      "Hang Zhou",
-      "Yizhou Sun",
-      "Wei Wang",
-      "Xiao Luo"
+      "Alexander Ploshkin",
+      "Nikita Stepanov",
+      "Alexey Pismenny",
+      "Viacheslav Ovchinnikov",
+      "Nikolay Savushkin"
     ],
     "company": null,
     "topics": [
       "Ranking",
-      "LLM in RecSys"
+      "CTR/CVR Prediction"
     ],
-    "ads": false,
-    "summary": "Innovation: Here we introduce a fixed-ranking benchmark which evaluates eight heterogeneous UQ signals as record-level monitors under a shared output contract. Why it matters: better ordering of candidates directly lifts clicks, conversions, and user satisfaction.",
+    "ads": true,
+    "summary": "Innovation: We present X-split ARGUS, a framework for ad ranking whose history compressor and online ranker are trained end to end. Why it matters: ad ranking decides which ads win impressions; better ordering lifts CTR and revenue per session.",
     "citations": 0,
-    "url": "https://arxiv.org/abs/2611.33036",
-    "pdf": "https://arxiv.org/pdf/2611.33036",
-    "published": "2026-11-24",
+    "url": "https://arxiv.org/abs/2611.24283",
+    "pdf": "https://arxiv.org/pdf/2611.24283",
+    "published": "2026-11-18",
     "week": "2026-W48"
   },
   {
-    "id": "2611.32855",
-    "title": "Speculative Decoding for Semantic-ID-Based Generative Recommendations",
+    "id": "2611.01280",
+    "title": "Improving Ads Ranking Models with Auxiliary Supervision: Techniques and Insights",
     "authors": [
-      "Harshal A. Chaudhari"
+      "Nikhil Bhale",
+      "Apurva Pathak",
+      "SaiSujithKumarReddy MarapaReddy",
+      "Xiao Yin",
+      "Prateek Bhansali"
+    ],
+    "company": null,
+    "topics": [
+      "Ranking",
+      "CTR/CVR Prediction"
+    ],
+    "ads": true,
+    "summary": "Innovation: We detail architectural innovations such as linearized labels for improved auxiliary signal precision, a split architecture to facilitate training task decomposition, and a novel Label Combination… Why it matters: ad ranking decides which ads win impressions; better ordering lifts CTR and revenue per session.",
+    "citations": 0,
+    "url": "https://arxiv.org/abs/2611.01280",
+    "pdf": "https://arxiv.org/pdf/2611.01280",
+    "published": "2026-10-31",
+    "week": "2026-W48"
+  },
+  {
+    "id": "2610.38378",
+    "title": "Towards Reliable, Scalable, and Value-Aligned Generative Recommendation for Large-Scale Advertising",
+    "authors": [
+      "Yatong Xiao",
+      "Yibo Sheng",
+      "Lixiang Wang",
+      "Mingjie Sun",
+      "Yunhao Sha",
+      "Pengfei Zhang",
+      "Shengyu Wang",
+      "Peng Wang",
+      "Wenjin Wu",
+      "Peng Jiang"
     ],
     "company": null,
     "topics": [
       "Generative Retrieval",
-      "Sequence Modeling",
-      "Retrieval"
+      "Retrieval",
+      "Ranking"
     ],
-    "ads": false,
-    "summary": "Innovation: We propose SIDECAR, which uses approximate draft candidates and a tree-attention pass to score the entire draft in a single model call, memory permitting. Why it matters: generating candidates directly could reshape the classic retrieve-then-rank pipeline.",
+    "ads": true,
+    "summary": "Innovation: We present GR4AD-X, which addresses these limitations through reliable SID construction, serving-efficient capacity scaling, and unified value alignment. Why it matters: generating ad candidates directly could simplify the ads retrieval stack and improve recall.",
     "citations": 0,
-    "url": "https://arxiv.org/abs/2611.32855",
-    "pdf": "https://arxiv.org/pdf/2611.32855",
-    "published": "2026-11-24",
+    "url": "https://arxiv.org/abs/2610.38378",
+    "pdf": "https://arxiv.org/pdf/2610.38378",
+    "published": "2026-10-28",
+    "week": "2026-W48"
+  },
+  {
+    "id": "2611.04147",
+    "title": "AdSteer: Native Advertising in Large Language Model Generation",
+    "authors": [
+      "Shuhang Lin",
+      "Chuhao Zhou",
+      "Zhenyu Wang",
+      "Xiao Lin",
+      "Changsheng Wang",
+      "Saibo Geng",
+      "Dimitris N. Metaxas"
+    ],
+    "company": null,
+    "topics": [
+      "LLM in RecSys"
+    ],
+    "ads": true,
+    "summary": "Innovation: We propose AdSteer, a lightweight decoding-time advertising framework that adaptively adjusts token probabilities to integrate contextually appropriate advertisement into responses. Why it matters: shows how LLMs can be used inside ads ranking/targeting rather than only in content recsys.",
+    "citations": 0,
+    "url": "https://arxiv.org/abs/2611.04147",
+    "pdf": "https://arxiv.org/pdf/2611.04147",
+    "published": "2026-11-03",
+    "week": "2026-W48"
+  },
+  {
+    "id": "2611.01090",
+    "title": "Numerical Embeddings for CTR Prediction: A Taxonomy, Unified Benchmark, and Open-Source FuxiCTR Extension",
+    "authors": [
+      "Heng Yao",
+      "Hanwei Zhu",
+      "Tianying Liu",
+      "Yulou Shu",
+      "Siyun Hou"
+    ],
+    "company": null,
+    "topics": [
+      "CTR/CVR Prediction"
+    ],
+    "ads": true,
+    "summary": "Innovation: Numerical embeddings map scalar features into vectors before a click-through rate (CTR) backbone combines the fields. Why it matters: more accurate CTR/CVR estimates feed ranking, bidding, and budget pacing in the ads auction.",
+    "citations": 0,
+    "url": "https://arxiv.org/abs/2611.01090",
+    "pdf": "https://arxiv.org/pdf/2611.01090",
+    "published": "2026-10-31",
+    "week": "2026-W48"
+  },
+  {
+    "id": "2610.39884",
+    "title": "KARMA: Training-Free Knowledge-Atomic Harness Evolution for Industrial Advertising Agents",
+    "authors": [
+      "Xinhua Miao",
+      "Yuanzhen Rong",
+      "Weiru Zhang",
+      "Xiaoyi Zeng"
+    ],
+    "company": null,
+    "topics": [],
+    "ads": true,
+    "summary": "Innovation: We present KARMA (Knowledge-Atomic, Regression-Gated Modular Adaptation), a training-free framework that evolves six typed knowledge modules while keeping model weights and executable harness code… Why it matters: relevant to how candidates are retrieved, ranked, and served to users.",
+    "citations": 0,
+    "url": "https://arxiv.org/abs/2610.39884",
+    "pdf": "https://arxiv.org/pdf/2610.39884",
+    "published": "2026-10-29",
+    "week": "2026-W48"
+  },
+  {
+    "id": "2611.11013",
+    "title": "Slim Foundation Models for Latency-Critical Recommendation Serving",
+    "authors": [
+      "Danyal Aftab",
+      "Anas Zafar",
+      "Assadig Abakr",
+      "Steven Davy"
+    ],
+    "company": null,
+    "topics": [
+      "Foundation Models",
+      "LLM in RecSys",
+      "CTR/CVR Prediction"
+    ],
+    "ads": true,
+    "summary": "Innovation: We propose a resource-efficient pipeline, SlimFM, that makes online LLM-based semantic modeling practical: (1) dependency-aware structured pruning compresses LLaMA3-8B by 44% to a 4.5B-parameter… Why it matters: a shared ads foundation model could serve targeting, ranking, and creative from one backbone.",
+    "citations": 0,
+    "url": "https://arxiv.org/abs/2611.11013",
+    "pdf": "https://arxiv.org/pdf/2611.11013",
+    "published": "2026-11-07",
+    "week": "2026-W48"
+  },
+  {
+    "id": "2611.34068",
+    "title": "Budget, Readout or Reasoning? Where Small Reasoning Models Lose Value in Auction Bidding",
+    "authors": [
+      "Mahbod Khaleti",
+      "Seyed Reza Tavakoli",
+      "Baran Hoseini",
+      "Alireza Noori",
+      "Amir Amini",
+      "Koorosh Aslansefat",
+      "Marjan Alirezaie",
+      "Ali Habibnia"
+    ],
+    "company": null,
+    "topics": [],
+    "ads": true,
+    "summary": "Innovation: Ad platforms and marketplaces show bidders a bid landscape, the estimated chance of winning at each candidate bid, and increasingly let agents built on reasoning language models choose the bid. Why it matters: relevant to how candidates are retrieved, ranked, and served to users.",
+    "citations": 0,
+    "url": "https://arxiv.org/abs/2611.34068",
+    "pdf": "https://arxiv.org/pdf/2611.34068",
+    "published": "2026-11-25",
     "week": "2026-W48"
   }
 ]
