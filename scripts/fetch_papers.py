@@ -1,4 +1,4 @@
-"""Weekly arXiv paper tracker for ads & recommendation systems — v2.
+"""Weekly arXiv paper tracker for ADS TECHNOLOGY — v3 (ads-first).
 
 What changed in v2 (per reader feedback):
 - STRICT relevance gate: a paper must be *about* recommendation / ads /
@@ -104,6 +104,31 @@ ADS_KEYWORDS = [
     "advertis", "ad ranking", "ad targeting", "ad click", "sponsored",
     "auction", "advertiser", "ad creative",
 ]
+
+# Ads-technology anchors: v3 focus. The weekly list is ads-first.
+ADS_ANCHORS = [
+    "advertising", "advertisement", "advertiser", "ad ranking",
+    "ad targeting", "ads ranking", "online ads", "display ad",
+    "search ad", "sponsored search", "sponsored content", "ad auction",
+    "auction", "bidding", "bid optimization", "click-through",
+    "ctr prediction", "conversion rate", "cvr prediction",
+    "conversion prediction", "ad creative", "campaign", "marketing",
+    "retail media", "ad recommendation", "ads recommendation",
+    "promoted", "e-commerce advertising",
+]
+ADS_QUERIES = [
+    'all:"online advertising"', 'all:"advertising" AND all:"ranking"',
+    'all:"ad ranking"', 'all:"advertising" AND all:"targeting"',
+    'all:"click-through rate prediction"', 'all:"conversion rate prediction"',
+    'all:"sponsored search"', 'all:"ad auction"',
+    'all:"advertising" AND all:"recommendation"',
+    'all:"advertising" AND all:"retrieval"',
+    'all:"advertising" AND all:"large language model"',
+    'all:"ad creative"', 'all:"bidding" AND all:"advertising"',
+    'all:"ctr prediction"', 'all:"marketing" AND all:"recommendation"',
+]
+FILL_MAX = 3  # at most 3 of the 10 slots may be non-ads recsys papers
+
 SEARCH_QUERIES = [
     'all:"recommender system"', 'all:"recommendation system"',
     'all:"recommendation" AND all:"ranking"',
@@ -129,6 +154,18 @@ def base_id(arxiv_id):
 
 def count_hits(text, phrases):
     return sum(1 for p in phrases if p in text)
+
+
+
+def ads_score(title, abstract):
+    """Return (score, is_ads_focused). Ads anchor in title, or >=2 in abstract."""
+    t = title.lower()
+    a = abstract.lower()
+    th = count_hits(t, ADS_ANCHORS)
+    ah = count_hits(a, ADS_ANCHORS)
+    if th == 0 and ah < 2:
+        return 0, False
+    return th * 8 + min(ah, 8) * 2, True
 
 
 def relevance(title, abstract):
@@ -180,13 +217,31 @@ def first_sentences(text, cues, max_len):
     return chosen
 
 
-def concise_summary(abstract, topics):
+ADS_WHY = {
+    "Targeting": "directly improves who an ad is shown to — audience quality drives spend efficiency.",
+    "Ranking": "ad ranking decides which ads win impressions; better ordering lifts CTR and revenue per session.",
+    "CTR/CVR Prediction": "more accurate CTR/CVR estimates feed ranking, bidding, and budget pacing in the ads auction.",
+    "Retrieval": "better ad candidate retrieval raises the quality ceiling for ranking and targeting downstream.",
+    "Generative Retrieval": "generating ad candidates directly could simplify the ads retrieval stack and improve recall.",
+    "LLM in RecSys": "shows how LLMs can be used inside ads ranking/targeting rather than only in content recsys.",
+    "Foundation Models": "a shared ads foundation model could serve targeting, ranking, and creative from one backbone.",
+    "Representation Learning": "better user/ad embeddings improve targeting, retrieval, and ranking across the ads funnel.",
+    "Sequence Modeling": "modeling user sequences sharpens intent signals used for targeting and ranking ads.",
+    "User Understanding": "better user understanding is the input every targeting and personalization decision depends on.",
+    "Graph Learning": "graph signals (user-advertiser-item) can improve targeting and cold-start ad delivery.",
+}
+
+
+def concise_summary(abstract, topics, ads=False):
     innovation = first_sentences(
         abstract,
         ["we propose", "we present", "we introduce", "this paper proposes",
          "this work proposes", "we develop", "we design", "novel"],
         200)
-    why = WHY_IT_MATTERS.get(topics[0], WHY_DEFAULT) if topics else WHY_DEFAULT
+    table = ADS_WHY if ads else WHY_IT_MATTERS
+    why = table.get(topics[0], WHY_DEFAULT) if topics else WHY_DEFAULT
+    if ads and topics and topics[0] not in table:
+        why = WHY_DEFAULT
     why = why[0].lower() + why[1:] if why else why
     return f"Innovation: {innovation} Why it matters: {why}"
 
@@ -214,10 +269,10 @@ def arxiv_fetch(params):
     return out
 
 
-def arxiv_search(since, per_query=50):
+def arxiv_search(since, per_query=50, queries=None):
     cat = " OR ".join(f"cat:{c}" for c in CATEGORIES)
     seen, out = set(), []
-    for q in SEARCH_QUERIES:
+    for q in (queries or SEARCH_QUERIES):
         try:
             rows = arxiv_fetch({
                 "search_query": f"({q}) AND ({cat})",
@@ -291,56 +346,72 @@ def save_json(path, data):
 def main():
     today = date.today()
     week = week_label(today)
-    # Start with a 7-day window; widen to 14 only if too few qualify.
-    found, qualified = [], []
-    for days in (7, 14):
-        since = today - timedelta(days=days)
-        print(f"Fetching arXiv papers since {since} (week {week}, window {days}d)...")
-        found = arxiv_search(since)
-        qualified = []
-        for raw in found:
-            score, ok = relevance(raw["title"], raw["summary_raw"])
-            if ok:
-                raw["_score"] = score
-                qualified.append(raw)
-        print(f"  {len(found)} candidates, {len(qualified)} pass the relevance gate")
-        if len(qualified) >= TOP_N:
-            break
 
-    # Rank: relevance, then big-tech, then citations (enriched later is
-    # too slow for all) — enrich a shortlist of 25, then final-rank.
-    qualified.sort(key=lambda p: p["_score"], reverse=True)
-    shortlist = qualified[:25]
-    for raw in shortlist:
-        enrich(raw)
-    shortlist.sort(key=lambda p: (p["_score"],
+    # Tier 1 — ads technology (30-day window: ads papers are sparser).
+    since_ads = today - timedelta(days=30)
+    print(f"Fetching ADS papers since {since_ads} (week {week})...")
+    ads_pool = []
+    for raw in arxiv_search(since_ads, queries=ADS_QUERIES):
+        s, ok = ads_score(raw["title"], raw["summary_raw"])
+        if ok:
+            raw["_score"] = s + relevance(raw["title"], raw["summary_raw"])[0]
+            raw["_ads"] = True
+            ads_pool.append(raw)
+    print(f"  {len(ads_pool)} ads-focused candidates")
+
+    # Tier 2 — general recsys filler (14-day window), capped at FILL_MAX.
+    since_fill = today - timedelta(days=14)
+    print(f"Fetching recsys filler since {since_fill}...")
+    ads_ids = {p["id"] for p in ads_pool}
+    fill_pool = []
+    for raw in arxiv_search(since_fill):
+        if raw["id"] in ads_ids:
+            continue
+        s, ok = relevance(raw["title"], raw["summary_raw"])
+        if ok:
+            raw["_score"] = s
+            raw["_ads"] = False
+            fill_pool.append(raw)
+    print(f"  {len(fill_pool)} recsys candidates (max {FILL_MAX} will be used)")
+
+    def rank(pool, limit):
+        pool.sort(key=lambda p: p["_score"], reverse=True)
+        short = pool[:25]
+        for raw in short:
+            enrich(raw)
+        short.sort(key=lambda p: (p["_score"],
                                   4 if p.get("company") else 0,
                                   min(p.get("citations", 0), 20)),
                    reverse=True)
+        return short[:limit]
+
+    ads_ranked = rank(ads_pool, TOP_N)
+    fill_ranked = rank(fill_pool, FILL_MAX) if len(ads_ranked) < TOP_N else []
+    selected = (ads_ranked + fill_ranked)[:TOP_N]
+    print(f"  selected: {len(ads_ranked)} ads + "
+          f"{len(selected) - len(ads_ranked)} filler")
 
     kept = []
-    for raw in shortlist:
+    for raw in selected:
         if len(kept) >= TOP_N:
             break
         if not verify_link(raw):
             print(f"  DROPPED (link/title mismatch): {raw['id']} {raw['title']}")
             continue
         topics = classify_topics(raw["title"], raw["summary_raw"])
+        is_ads = raw.get("_ads") or classify_ads(raw["title"], raw["summary_raw"])
         kept.append({
             "id": raw["id"], "title": raw["title"],
             "authors": raw["authors"], "company": raw.get("company"),
-            "topics": topics,
-            "ads": classify_ads(raw["title"], raw["summary_raw"]),
-            "summary": concise_summary(raw["summary_raw"], topics),
+            "topics": topics, "ads": is_ads,
+            "summary": concise_summary(raw["summary_raw"], topics, ads=is_ads),
             "citations": raw.get("citations", 0),
             "url": raw["url"], "pdf": raw["pdf"],
             "published": raw["published"], "week": week,
         })
-        print(f"  KEPT [{raw['_score']}] {raw['id']} {raw['title'][:80]}")
+        print(f"  KEPT [{'ADS' if is_ads else 'fill'}] {raw['id']} {raw['title'][:75]}")
     print(f"  {len(kept)} papers in this week's Top {TOP_N}")
 
-    # papers.json = current week's Top 10 only (reading-list saves live
-    # in the reader's browser, so older weeks are not lost to the user).
     save_json(PAPERS_PATH, kept)
     print(f"Wrote {PAPERS_PATH}")
 
