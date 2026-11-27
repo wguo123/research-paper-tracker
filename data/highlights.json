@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "week": "2026-W48",
+    "paper_id": "2611.28604",
+    "why": "Top-ranked this week: \"MADRec: Reliable Multi-Agent Reasoning with Evidence-Grounded Debate for Recommendation\". candidate generation sets the recall ceiling for everything downstream in the recommendation pipeline."
+  }
+]
