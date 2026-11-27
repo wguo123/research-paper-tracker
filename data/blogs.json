@@ -1,1 +1,178 @@
-[]
+[
+  {
+    "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
+    "source": "Meta Engineering",
+    "date": "2026-11-18",
+    "ads": true,
+    "topics": [
+      "Ranking",
+      "LLM in RecSys"
+    ],
+    "summary": "Our previous post in this series introduced the Ranking Engineer Agent (REA), an autonomous system that generates hypotheses, designs experiments, and proves new machine learning (ML) techniques on ads ranking models. Now, we're sharing how we propagate ranking model improvements efficiently across a large and diverse fleet of ads ranking models.",
+    "url": "https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/"
+  },
+  {
+    "title": "Engineering AI Discover",
+    "source": "Netflix TechBlog",
+    "date": "2026-11-17",
+    "ads": false,
+    "topics": [
+      "LLM in RecSys",
+      "Retrieval",
+      "Ranking"
+    ],
+    "summary": "The challenges and decisions behind AI Discover's intelligence layer: Netflix describes how the new TV discovery experience combines LLMs with its existing recommendation systems, letting members steer recommendations by theme while retrieval and rankers keep every pick grounded in the real catalog.",
+    "url": "https://netflixtechblog.com/engineering-ai-discover-e244944cdc38"
+  },
+  {
+    "title": "Intelligent Delivery: Making Every Unit of Compute Serve Better Ads",
+    "source": "Meta Engineering",
+    "date": "2026-11-11",
+    "ads": true,
+    "topics": [
+      "Ranking"
+    ],
+    "summary": "Ads ranking models are growing toward LLM scale faster than the hardware to run them can keep up. An extra unit of compute has more impact on some ad requests, models, and chips than on others. The challenge is deciding where to allocate it to get the best outcome for the entire system.",
+    "url": "https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/"
+  },
+  {
+    "title": "Your Algorithm: Giving People More Ways to Personalize Facebook Recommendations",
+    "source": "Meta Engineering",
+    "date": "2026-11-10",
+    "ads": false,
+    "topics": [
+      "User Understanding"
+    ],
+    "summary": "Your algorithm is a suite of AI-powered tools that makes Facebook recommendations more transparent and steerable, with a single editable view of the interests that shape Feed and Reels. We're sharing how Your algorithm turns people's natural language preferences into responsive recommendations, and how LLMs are tailored to specific tasks within the system.",
+    "url": "https://engineering.fb.com/2026/11/10/ml-applications/your-algorithm-giving-people-more-ways-to-personalize-facebook-recommendations/"
+  },
+  {
+    "title": "Safe and Efficient Multi-Epoch Embedding Training",
+    "source": "Pinterest Engineering",
+    "date": "2026-11-06",
+    "ads": false,
+    "topics": [
+      "Representation Learning",
+      "Ranking"
+    ],
+    "summary": "Large ID embedding tables underpin some of the largest modeling advances at Pinterest, including teacher-model scaling and cross-domain pretraining for ranking and retrieval. Pinterest shares how it made multi-epoch fine-tuning of these tables safe for the Homefeed ranking model, after finding that full co-training leads to catastrophic overfitting.",
+    "url": "https://medium.com/pinterest-engineering/safe-and-efficient-multi-epoch-embedding-training-103bec2abc83"
+  },
+  {
+    "title": "F3 Lightning: How Meta Accelerates Ads ML Features to Production at Scale",
+    "source": "Meta Engineering",
+    "date": "2026-11-03",
+    "ads": true,
+    "topics": [
+      "CTR/CVR Prediction"
+    ],
+    "summary": "Facebook Feature Framework (F3) is Meta's framework for authoring, compiling, and serving the machine learning features underlying ads ranking models, where a single request can require more than 20,000 features. F3 Lightning reduced execution computational costs by compiling all features into a single merged graph.",
+    "url": "https://engineering.fb.com/2026/11/03/ml-applications/f3-lightning-how-meta-accelerates-ads-ml-features-to-production/"
+  },
+  {
+    "title": "Advancing Generative Recommendation Inference: our collaboration with NVIDIA on TensorRT LLM",
+    "source": "Spotify Engineering",
+    "date": "2026-10-16",
+    "ads": false,
+    "topics": [
+      "Generative Retrieval",
+      "Foundation Models"
+    ],
+    "summary": "At Spotify, every surface and interaction is personalized to you as a user: the content on the Home page, the next song that plays, and more. Spotify is moving its recommendation stack from traditional multi-step retrieve-then-rank systems toward a Large Personalized Language Model, and describes the inference engineering challenge behind that shift.",
+    "url": "https://engineering.atspotify.com/2026/10/advancing-generative-recommendation-inference-our-collaboration-with-nvidia-on-tensorrt-llm/"
+  },
+  {
+    "title": "CASTLE: training natural language search before the first real query",
+    "source": "Airbnb Engineering",
+    "date": "2026-10-13",
+    "ads": false,
+    "topics": [
+      "Retrieval",
+      "LLM in RecSys"
+    ],
+    "summary": "How we addressed the cold-start problem for Airbnb's natural language search by jointly generating synthetic training data — queries and relevance labels — from de-identified booking and search signals.",
+    "url": "https://medium.com/airbnb-engineering/castle-training-natural-language-search-before-the-first-real-query-3818ef8b4828"
+  },
+  {
+    "title": "From Activity to Intent: Generating User Journeys with LLMs",
+    "source": "Pinterest Engineering",
+    "date": "2026-10-09",
+    "ads": false,
+    "topics": [
+      "User Understanding",
+      "LLM in RecSys"
+    ],
+    "summary": "Pinterest describes how it infers user 'journeys' — the goals behind a user's activity — in production: a fine-tuned 4-billion-parameter LLM reads a chronological activity log and emits a ranked list of journey names, replacing a multi-stage clustering pipeline so recommendations and notifications can help users finish a project.",
+    "url": "https://medium.com/pinterest-engineering/from-activity-to-intent-generating-user-journeys-with-llms-9652b9417626"
+  },
+  {
+    "title": "Personalization without user identity",
+    "source": "Airbnb Engineering",
+    "date": "2026-09-29",
+    "ads": false,
+    "topics": [
+      "User Understanding"
+    ],
+    "summary": "How Airbnb uses proximity signals to personalize without relying on individual user history. By grouping nearby users into proximity buckets of roughly 1,000 people and aggregating their collective signals, Airbnb builds features that personalize search ranking and recommendations for cold-start users with no login or history.",
+    "url": "https://medium.com/airbnb-engineering/personalization-without-user-identity-8e7891a1d486"
+  },
+  {
+    "title": "Beyond Two Towers: Launching the 3-Tower Engagement Co-Train Model (Part 2)",
+    "source": "Pinterest Engineering",
+    "date": "2026-09-17",
+    "ads": true,
+    "topics": [
+      "Ranking",
+      "CTR/CVR Prediction"
+    ],
+    "summary": "Pinterest details its first ads lightweight ranking model that goes beyond two towers: a 3-tower co-train design on the Nexus serving stack that jointly predicts the probability of a click, a good click lasting at least 30 seconds, and an outbound click for each candidate ad, while keeping fast two-tower scoring for all candidates.",
+    "url": "https://medium.com/pinterest-engineering/beyond-two-towers-launching-the-3-tower-engagement-co-train-model-part-2-0b96167d2c14"
+  },
+  {
+    "title": "The guest journey, updated in real time: extending Airbnb's sequence recommender with Chronon",
+    "source": "Airbnb Engineering",
+    "date": "2026-09-17",
+    "ads": false,
+    "topics": [
+      "Sequence Modeling",
+      "Ranking"
+    ],
+    "summary": "How two new Chronon capabilities, Push Mode and NRT Model Transform, allow us to provide more relevant search results instantly as a guest explores, rather than waiting for the next batch run — cutting the guest-journey embedding staleness from roughly two days to under a minute.",
+    "url": "https://medium.com/airbnb-engineering/the-guest-journey-updated-in-real-time-extending-airbnbs-sequence-recommender-with-chronon-8f1582578553"
+  },
+  {
+    "title": "Evolving Pinterest's Embedding Retrieval Platform",
+    "source": "Pinterest Engineering",
+    "date": "2026-09-11",
+    "ads": false,
+    "topics": [
+      "Retrieval",
+      "Representation Learning"
+    ],
+    "summary": "Embedding retrieval is a core capability of Manas, Pinterest's in-house distributed search platform, powering Home Feed, Search, Related Pins, Ads, and Notifications over billions of embeddings. Pinterest describes evolving the stack with quantization, SSD-based ANN serving, and multi-embedding retrieval to cut cost while raising recall.",
+    "url": "https://medium.com/pinterest-engineering/evolving-pinterests-embedding-retrieval-platform-aede4e831e01"
+  },
+  {
+    "title": "Measuring the Impact of Personalized Recommendations",
+    "source": "Netflix TechBlog",
+    "date": "2026-07-10",
+    "ads": false,
+    "topics": [
+      "User Understanding"
+    ],
+    "summary": "Personalization is not only an algorithmic problem, it is also a measurement problem. Netflix summarizes a behavioral model that separates a title's underlying appeal from the incremental effect of recommending it — decomposing impact into exposure, selection, and targeting — and validates the model's counterfactual predictions against randomized experiments.",
+    "url": "https://netflixtechblog.com/measuring-the-impact-of-personalized-recommendations-4c26be3a4d96"
+  },
+  {
+    "title": "Integrating Netflix's Foundation Model into Personalization applications",
+    "source": "Netflix TechBlog",
+    "date": "2025-11-17",
+    "ads": false,
+    "topics": [
+      "Foundation Models",
+      "Representation Learning"
+    ],
+    "summary": "The motivation for building the Netflix Foundation Model for personalization was to centralize member preference learning in one powerful model learned from comprehensive user interaction histories. This post covers the three integration approaches Netflix experimented with — embeddings, subgraph integration, and fine-tuning — now used in production for different use cases.",
+    "url": "https://netflixtechblog.com/integrating-netflixs-foundation-model-into-personalization-applications-cf176b5860eb"
+  }
+]
