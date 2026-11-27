@@ -4,33 +4,94 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research Paper Tracker — Ads &amp; Recommendation Systems</title>
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <style>
-:root{--ink:#1a2332;--muted:#5b6b7f;--line:#dbe3ec;--bg:#f6f8fa;--card:#fff;--blue:#0969da;--green:#1a7f37;--amber:#9a6700}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
-header{background:#0d1117;color:#fff;padding:28px 20px}header h1{margin:0 0 6px;font-size:28px}header p{margin:0;color:#c9d1d9;max-width:760px}
-main{max-width:980px;margin:0 auto;padding:20px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.tabs button{border:1px solid var(--line);background:#fff;padding:10px 16px;border-radius:999px;cursor:pointer;font-size:15px}.tabs button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-section{display:none}section.active{display:block}
-.highlight{background:#fff8c5;border:2px solid #d4a72c;border-radius:12px;padding:20px;margin-bottom:18px}.highlight h2{margin:0 0 4px}.highlight .why{background:#fff;border-left:4px solid #d4a72c;padding:10px 12px;margin:12px 0}
-.filters{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:18px}.filters h2{margin:0 0 10px;font-size:16px}.filters label{margin-right:14px;font-size:14px}.filters select{padding:6px 8px;border:1px solid var(--line);border-radius:6px}
-.topic-filter{margin-top:12px}.topic-filter strong{display:block;margin-bottom:6px;font-size:14px}.topic-filter label{display:inline-block;background:#eef4ff;border:1px solid #c8dbff;border-radius:999px;padding:4px 10px;margin:0 6px 6px 0;cursor:pointer;font-size:13px}.topic-filter input{margin-right:5px}
-.grid{display:grid;gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}.card h3{margin:0 0 6px;font-size:19px}.meta{color:var(--muted);font-size:14px;margin:0 0 10px}
-.badge{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;margin:0 4px 4px 0}.company{background:#ddf4ff;color:#0550ae}.ads{background:#fff8c5;color:var(--amber)}.nonads{background:#dafbe1;color:var(--green)}.topic{background:#eef4ff;color:#384a66}.read-badge{background:#dafbe1;color:var(--green)}.week-badge{background:#0d1117;color:#fff}
-.links{margin-top:12px}.links a{color:var(--blue);margin-right:14px}.links a:visited{color:var(--blue)}
-button.save,button.action{border:1px solid var(--blue);background:#fff;color:var(--blue);border-radius:6px;padding:6px 12px;cursor:pointer;margin:10px 8px 0 0}button.save.saved{background:var(--blue);color:#fff}.empty{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
-footer{color:var(--muted);font-size:13px;text-align:center;padding:24px}
+:root{--bg:#f7f5f0;--surface:#ffffff;--surface2:#efeadf;--text:#16233a;--dim:#5b6572;--border:#ddd6c7;--accent:#d97706;--accent-ink:#92400e;--teal:#0f766e;--radius:10px;--amber-50:#fffbeb;--red-bg:#fee2e2;--red-ink:#991b1b;--slate-bg:#e2e8f0;--slate-ink:#334155;--teal-bg:#ccfbf1;--teal-ink:#0f766e;--green-bg:#dcfce7;--green-ink:#166534;--company-bg:#fef3c7;--company-ink:#92400e;--on-accent:#ffffff;--on-teal:#ffffff;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#10151f;--surface:#18202f;--surface2:#1f2939;--text:#eef1f6;--dim:#9aa6b5;--border:#2c3a4f;--accent:#f59e0b;--accent-ink:#fbbf24;--teal:#2dd4bf;--amber-50:#2a2113;--red-bg:#450a0a;--red-ink:#fca5a5;--slate-bg:#334155;--slate-ink:#cbd5e1;--teal-bg:#134e4a;--teal-ink:#5eead4;--green-bg:#14532d;--green-ink:#bbf7d0;--company-bg:#451a03;--company-ink:#fde68a;--on-accent:#1c1005;--on-teal:#042f2e}}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.55;font-size:14px}
+.wrap{max-width:48rem;margin:0 auto;padding-left:16px;padding-right:16px}
+header.site{padding:28px 0 16px;border-bottom:2px solid var(--text)}
+.eyebrow{margin:0 0 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--accent-ink)}
+header.site h1{margin:0 0 6px;font-family:Georgia,'Iowan Old Style','Times New Roman',serif;font-size:26px;font-weight:700;line-height:1.2}
+.sub{margin:0;color:var(--dim);font-size:14px}
+.tabs{position:sticky;top:0;z-index:10;background:var(--bg);display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:12px 10px 10px;cursor:pointer;font-size:14px;font-weight:600;color:var(--dim)}
+.tabs button:hover{color:var(--text)}
+.tabs button.active{color:var(--text);border-bottom:2px solid var(--accent)}
+section{display:none;padding-top:4px}section.active{display:block}
+section h2{font-family:Georgia,'Iowan Old Style','Times New Roman',serif;font-size:20px;margin:18px 0 4px}
+.section-sub{color:var(--dim);font-size:14px;margin:0 0 12px}
+.highlight{background:var(--surface);border:2px solid var(--accent);border-radius:var(--radius);padding:16px;margin:18px 0}
+.hl-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:2px}
+.hl-pill{background:var(--accent);color:var(--on-accent);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:3px 10px}
+.hl-week{font-size:12px;font-weight:700;color:var(--dim)}
+.highlight .paper{border-bottom:0;padding-bottom:6px}
+.why{background:var(--surface2);border-left:3px solid var(--accent);padding:10px 12px;margin:10px 0 0;font-size:14px}
+.why strong,.why-note strong{color:var(--accent-ink)}
+.why-note{font-size:14px;margin:8px 0 0}
+.spotlight{background:var(--amber-50);border:1px solid var(--accent);border-radius:var(--radius);padding:12px 14px;margin:18px 0;font-size:13px}
+.spotlight strong{color:var(--accent-ink)}
+.filters{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:18px}
+.filters h2{margin:0 0 12px;font-size:16px;font-family:inherit}
+#search-filter{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;margin-bottom:12px}
+#search-filter::placeholder{color:var(--dim)}
+.pill-group{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:12px}
+.filter-label{font-size:14px;font-weight:600;margin-right:2px}
+.filter-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.field-label{font-size:14px}
+#company-filter{padding:6px 8px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px}
+.pill{position:relative;display:inline-flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:5px 12px;cursor:pointer;font-size:13px;font-weight:600;color:var(--text)}
+.pill input{position:absolute;opacity:0;pointer-events:none}
+.pill:has(input:checked){background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.pill.topic-pill:has(input:checked){background:var(--teal);border-color:var(--teal);color:var(--on-teal)}
+.pill:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.topic-filter{margin-top:4px}
+.topic-filter strong{display:block;margin-bottom:8px;font-size:14px}
+.topic-filter .pill{margin:0 6px 6px 0}
+.grid{display:flex;flex-direction:column}
+.paper{padding:16px 0;border-bottom:1px solid var(--border)}
+.paper:last-child{border-bottom:0}
+.paper-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.paper-title{font-family:Georgia,'Iowan Old Style','Times New Roman',serif;font-size:17px;font-weight:600;line-height:1.35;margin:0;flex:1}
+.company-line{margin-top:8px}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
+.badge.company{background:var(--company-bg);color:var(--company-ink)}
+.badge.ads{background:var(--red-bg);color:var(--red-ink)}
+.badge.nonads{background:var(--slate-bg);color:var(--slate-ink)}
+.badge.topic{background:var(--teal-bg);color:var(--teal-ink)}
+.badge.cite{background:var(--slate-bg);color:var(--slate-ink);font-weight:600}
+.badge.read-badge{background:var(--green-bg);color:var(--green-ink)}
+.badge.week-badge{background:var(--surface2);color:var(--text)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.meta{color:var(--dim);font-size:12px;margin:10px 0 0}
+.summary{font-size:14px;margin:10px 0 0}
+.summary p{margin:0 0 8px}.summary p:last-child{margin-bottom:0}
+.summary .lbl{color:var(--accent-ink);font-weight:700}
+.links{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.links a{display:inline-block;border:1px solid var(--border);background:var(--surface);color:var(--text);text-decoration:none;border-radius:8px;padding:6px 12px;font-size:13px;font-weight:600}
+.links a:hover{border-color:var(--accent);color:var(--accent-ink)}
+button.save{flex:none;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+button.save.saved{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+button.action{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:13px}
+button.action:hover{border-color:var(--accent);color:var(--accent-ink)}
+.archive-item{padding:4px 0 16px;border-bottom:1px solid var(--border)}
+.archive-item:last-child{border-bottom:0}
+.archive-week{margin:14px 0 0}
+.empty{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);padding:28px;text-align:center;color:var(--dim)}
+footer{color:var(--dim);font-size:12px;text-align:center;padding:24px 16px 32px}
 </style>
 </head>
 <body>
-<header>
+<header class="site"><div class="wrap">
+<p class="eyebrow">Weekly digest &middot; arXiv + industry</p>
 <h1>Research Paper Tracker</h1>
-<p>Weekly arXiv papers on ads &amp; recommendation systems — big-tech papers, most-cited classics, and industry blog watch.</p>
-</header>
-<main>
+<p class="sub">Weekly arXiv papers on ads &amp; recommendation systems &mdash; big-tech papers, most-cited classics, and industry blog watch.</p>
+</div></header>
+<main class="wrap">
 <nav class="tabs" aria-label="Sections">
 <button class="active" data-tab="digest">Weekly Digest</button>
 <button data-tab="cited">Most Cited</button>
@@ -38,59 +99,48 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding:24px}
 <button data-tab="highlights">Highlights Archive</button>
 <button data-tab="reading">My Reading List <span id="reading-count"></span></button>
 </nav>
-
 <section id="digest" class="active">
 <div id="weekly-highlight"></div>
+<div id="bigtech-spotlight" class="spotlight" hidden></div>
 <div class="filters">
-<h2>Filter this week's papers</h2>
-<div>
-<span>Ads / Non-ads: </span>
-<label><input type="radio" name="ads-filter" value="all" checked> All</label>
-<label><input type="radio" name="ads-filter" value="ads"> Ads</label>
-<label><input type="radio" name="ads-filter" value="non-ads"> Non-ads</label>
+<h2>Filter this week&rsquo;s papers</h2>
+<input type="search" id="search-filter" placeholder="Search titles, authors, topics, or companies&hellip;" aria-label="Search papers">
+<div class="pill-group"><span class="filter-label">Ads / Non-ads:</span><label class="pill"><input type="radio" name="ads-filter" value="all" checked> All</label><label class="pill"><input type="radio" name="ads-filter" value="ads"> Ads</label><label class="pill"><input type="radio" name="ads-filter" value="non-ads"> Non-ads</label></div>
+<div class="filter-row"><label class="field-label">Company: <select id="company-filter"><option value="">All companies</option></select></label><label class="pill"><input type="checkbox" id="bigtech-only"> Big tech only</label><button class="action" id="clear-filters" type="button">Clear filters</button></div>
+<div class="topic-filter" id="topic-filter"><strong>Topics (multi-select &mdash; a paper matches if it has any selected topic):</strong></div>
 </div>
-<div style="margin-top:10px">
-<label>Company: <select id="company-filter"><option value="">All companies</option></select></label>
-<label style="margin-left:12px"><input type="checkbox" id="bigtech-only"> Big tech only</label>
-<button class="action" id="clear-filters" type="button">Clear filters</button>
-</div>
-<div class="topic-filter" id="topic-filter"><strong>Topics (multi-select — a paper matches if it has any selected topic):</strong></div>
-</div>
-<div id="digest-list" class="grid"><p class="empty">Loading this week's papers…</p></div>
+<div id="digest-list" class="grid"><p class="empty">Loading this week&rsquo;s papers&hellip;</p></div>
 </section>
-
 <section id="cited">
 <h2>Most Cited</h2>
-<p>Highly cited classics in recommendation and ads, ranked by citation count.</p>
-<div id="cited-list" class="grid"><p class="empty">Loading most-cited papers…</p></div>
+<p class="section-sub">Highly cited classics in recommendation and ads, ranked by citation count.</p>
+<div id="cited-list" class="grid"><p class="empty">Loading most-cited papers&hellip;</p></div>
 </section>
-
 <section id="blogs">
 <h2>Industry Blogs</h2>
-<p>Posts from big-tech engineering and research blogs.</p>
-<div id="blogs-list" class="grid"><p class="empty">Loading blog posts…</p></div>
+<p class="section-sub">Posts from big-tech engineering and research blogs.</p>
+<div id="blogs-list" class="grid"><p class="empty">Loading blog posts&hellip;</p></div>
 </section>
-
 <section id="highlights">
 <h2>Highlights Archive</h2>
-<p>Every past Weekly Highlight, by week — the most recent highlight is featured at the top of the Weekly Digest. Each highlight can be saved to your reading list.</p>
-<div id="highlights-list" class="grid"><p class="empty">Loading highlights…</p></div>
+<p class="section-sub">Every past Weekly Highlight, by week &mdash; the most recent highlight is featured at the top of the Weekly Digest. Each highlight can be saved to your reading list.</p>
+<div id="highlights-list" class="grid"><p class="empty">Loading highlights&hellip;</p></div>
 </section>
-
 <section id="reading">
 <h2>My Reading List</h2>
-<p>Saved papers are stored in this browser (localStorage). They stay here until you remove them.</p>
+<p class="section-sub">Saved papers are stored in this browser (localStorage). They stay here until you remove them.</p>
 <div id="reading-list" class="grid"></div>
 </section>
 </main>
-<footer>Data: <code>data/papers.json</code>, <code>data/classics.json</code>, <code>data/blogs.json</code>, <code>data/highlights.json</code> · Updated weekly by GitHub Actions.</footer>
-
+<footer class="wrap">Sources: Data from <code>data/papers.json</code>, <code>data/classics.json</code>, <code>data/blogs.json</code> and <code>data/highlights.json</code> &middot; Updated weekly by GitHub Actions.</footer>
 <script>
 var CANONICAL_TOPICS=["Generative Retrieval","Foundation Models","Representation Learning","Sequence Modeling","User Understanding","Graph Learning","Retrieval","Ranking","Targeting","LLM in RecSys","CTR/CVR Prediction"];
 var BIG_TECH=["Google","Meta","Amazon","Microsoft","Apple","Netflix","ByteDance","Alibaba","Tencent","Baidu","Kuaishou","Pinterest","LinkedIn","Snap","Uber","Airbnb","Spotify","NVIDIA","Huawei"];
 var STORAGE_KEY="rpt-reading-list-v1";
 var papers=[],classics=[],blogs=[],highlights=[],allPapers={};
-function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]});}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function fmtCite(n){return (n==null?0:n).toLocaleString('en-US');}
+function formatSummary(s){var t=esc(s||'');var i=t.indexOf('Why it matters:');if(i>=0){var a=t.slice(0,i).replace(/^Innovation:/,'<strong class="lbl">Innovation:</strong>');var b=t.slice(i).replace(/^Why it matters:/,'<strong class="lbl">Why it matters:</strong>');return '<p>'+a.trim()+'</p><p>'+b.trim()+'</p>';}return '<p>'+t+'</p>';}
 function loadSaved(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||[]}catch(e){return[]}}
 function storeSaved(list){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(list))}catch(e){}}
 function isSaved(id){return loadSaved().some(function(x){return x.id===id})}
@@ -101,34 +151,26 @@ function removeSaved(id){storeSaved(loadSaved().filter(function(x){return x.id!=
 function fetchJson(path){return fetch(path).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).catch(function(){return[]})}
 function resolveHighlight(h){if(h.paper)return h.paper;if(h.paper_id)return allPapers[h.paper_id];return null}
 function sortedHighlights(){return highlights.slice().sort(function(a,b){return String(b.week||'').localeCompare(String(a.week||''))})}
-function card(p,opts){opts=opts||{};var saved=isSaved(p.id);var read=isRead(p.id);
-var topics=(p.topics||[]).map(function(t){return '<span class="badge topic">'+esc(t)+'</span>'}).join('');
-var company=p.company?'<span class="badge company">'+esc(p.company)+'</span>':'';
-var adsTag=p.ads?'<span class="badge ads">Ads</span>':'<span class="badge nonads">Non-ads</span>';
-var readTag=read?'<span class="badge read-badge">Read</span>':'';
-var links='';if(p.url)links+='<a href="'+esc(p.url)+'" target="_blank" rel="noopener">arXiv abstract</a>';if(p.pdf)links+='<a href="'+esc(p.pdf)+'" target="_blank" rel="noopener">PDF</a>';
-var actions='<button class="save'+(saved?' saved':'')+'" data-save="'+esc(p.id)+'">'+(saved?'Saved \u2713':'Save')+'</button>';
-if(opts.inReading){actions+='<button class="action" data-read="'+esc(p.id)+'">'+(read?'Mark unread':'Mark read')+'</button><button class="action" data-remove="'+esc(p.id)+'">Remove</button>';}
-return '<article class="card"><h3>'+esc(p.title)+'</h3>'+(p.company?'<div>'+company+'</div>':'')+'<p class="meta">'+esc((p.authors||[]).join(', '))+(p.published?' \u00b7 '+esc(p.published):'')+(p.week?' \u00b7 '+esc(p.week):'')+'</p><div>'+adsTag+readTag+topics+'</div><p>'+esc(p.summary||'')+'</p><p class="meta">Citations: <strong>'+(p.citations==null?0:p.citations)+'</strong></p><div class="links">'+links+'</div>'+actions+'</article>';}
-function blogCard(b){var topics=(b.topics||[]).map(function(t){return '<span class="badge topic">'+esc(t)+'</span>'}).join('');var tag=b.ads?'<span class="badge ads">Ads</span>':'<span class="badge nonads">Non-ads</span>';return '<article class="card"><h3>'+esc(b.title)+'</h3><p class="meta">'+esc(b.source||'')+(b.date?' \u00b7 '+esc(b.date):'')+'</p><div>'+tag+topics+'</div><p>'+esc(b.summary||'')+'</p><div class="links"><a href="'+esc(b.url)+'" target="_blank" rel="noopener">Read post</a></div></article>';}
+function card(p,opts){opts=opts||{};var saved=isSaved(p.id);var read=isRead(p.id);var topics=(p.topics||[]).map(function(t){return '<span class="badge topic">'+esc(t)+'</span>'}).join('');var adsTag=p.ads?'<span class="badge ads">ADS</span>':'<span class="badge nonads">Non-ads</span>';var readTag=read?'<span class="badge read-badge">Read</span>':'';var citeTag='<span class="badge cite">'+fmtCite(p.citations)+' citations</span>';var links='';if(p.url)links+='<a href="'+esc(p.url)+'" target="_blank" rel="noopener">Read on arXiv</a>';if(p.pdf)links+='<a href="'+esc(p.pdf)+'" target="_blank" rel="noopener">PDF</a>';var actions='';if(opts.inReading){actions='<div class="actions"><button class="action" data-read="'+esc(p.id)+'">'+(read?'Mark unread':'Mark read')+'</button><button class="action" data-remove="'+esc(p.id)+'">Remove</button></div>';}return '<article class="paper"><div class="paper-head"><h3 class="paper-title">'+esc(p.title)+'</h3><button class="save'+(saved?' saved':'')+'" data-save="'+esc(p.id)+'">'+(saved?'★ Saved':'☆ Save')+'</button></div>'+(p.company?'<div class="company-line"><span class="badge company">🏢 '+esc(p.company)+'</span></div>':'')+'<div class="badges">'+adsTag+readTag+topics+citeTag+'</div><div class="summary">'+formatSummary(p.summary)+'</div><p class="meta">'+esc((p.authors||[]).join(', '))+(p.published?' · '+esc(p.published):'')+(p.week?' · '+esc(p.week):'')+'</p><div class="links">'+links+'</div>'+actions+'</article>';}
+function blogCard(b){var topics=(b.topics||[]).map(function(t){return '<span class="badge topic">'+esc(t)+'</span>'}).join('');var tag=b.ads?'<span class="badge ads">ADS</span>':'<span class="badge nonads">Non-ads</span>';return '<article class="paper"><div class="paper-head"><h3 class="paper-title">'+esc(b.title)+'</h3></div><p class="meta">'+esc(b.source||'')+(b.date?' · '+esc(b.date):'')+'</p><div class="badges">'+tag+topics+'</div><div class="summary">'+formatSummary(b.summary)+'</div><div class="links"><a href="'+esc(b.url)+'" target="_blank" rel="noopener">Read post</a></div></article>';}
 function empty(msg){return '<p class="empty">'+esc(msg)+'</p>'}
 function selectedTopics(){return Array.prototype.slice.call(document.querySelectorAll('#topic-filter input:checked')).map(function(i){return i.value})}
-function applyFilters(){var ads=document.querySelector('input[name="ads-filter"]:checked').value;var company=document.getElementById('company-filter').value;var bigOnly=document.getElementById('bigtech-only').checked;var topics=selectedTopics();
-return papers.filter(function(p){if(ads==='ads'&&!p.ads)return false;if(ads==='non-ads'&&p.ads)return false;if(company&&p.company!==company)return false;if(bigOnly&&!(p.company&&BIG_TECH.indexOf(p.company)>=0))return false;if(topics.length&&!(p.topics||[]).some(function(t){return topics.indexOf(t)>=0}))return false;return true;});}
-function renderHighlight(){var el=document.getElementById('weekly-highlight');var list=sortedHighlights();if(!list.length){el.innerHTML='';return}var h=list[0];var p=resolveHighlight(h);if(!p){el.innerHTML='';return}el.innerHTML='<div class="highlight"><h2>\u2b50 Weekly Highlight — '+esc(h.week||p.week||'')+'</h2>'+card(p)+'<div class="why"><strong>Why it matters:</strong> '+esc(h.why||'')+'</div></div>';}
-function renderHighlights(){var el=document.getElementById('highlights-list');var list=sortedHighlights();if(!list.length){el.innerHTML=empty('No highlights yet. The first Weekly Highlight will appear here after the next weekly update.');return}el.innerHTML=list.map(function(h){var p=resolveHighlight(h);if(!p)return '';return '<div><p><span class="badge week-badge">'+esc(h.week||'')+'</span></p>'+card(p)+'<p class="meta"><strong>Why it matters:</strong> '+esc(h.why||'')+'</p></div>'}).join('');}
-function renderDigest(){renderHighlight();var list=applyFilters();var el=document.getElementById('digest-list');if(!papers.length){el.innerHTML=empty('No papers yet for this week. Check back after the next weekly update, or see the Most Cited tab.');return}if(!list.length){el.innerHTML=empty('No papers match these filters. Try clearing a filter.');return}el.innerHTML=list.map(function(p){return card(p)}).join('');}
+function applyFilters(){var ads=document.querySelector('input[name="ads-filter"]:checked').value;var company=document.getElementById('company-filter').value;var bigOnly=document.getElementById('bigtech-only').checked;var topics=selectedTopics();var q=(document.getElementById('search-filter').value||'').trim().toLowerCase();return papers.filter(function(p){if(ads==='ads'&&!p.ads)return false;if(ads==='non-ads'&&p.ads)return false;if(company&&p.company!==company)return false;if(bigOnly&&!(p.company&&BIG_TECH.indexOf(p.company)>=0))return false;if(topics.length&&!(p.topics||[]).some(function(t){return topics.indexOf(t)>=0}))return false;if(q){var hay=[p.title,p.company,(p.authors||[]).join(' '),p.summary,(p.topics||[]).join(' ')].join(' ').toLowerCase();if(hay.indexOf(q)<0)return false;}return true;});}
+function renderHighlight(){var el=document.getElementById('weekly-highlight');var list=sortedHighlights();if(!list.length){el.innerHTML='';return}var h=list[0];var p=resolveHighlight(h);if(!p){el.innerHTML='';return}el.innerHTML='<div class="highlight"><div class="hl-head"><span class="hl-pill">★ Weekly Highlight</span><span class="hl-week">'+esc(h.week||p.week||'')+'</span></div>'+card(p)+'<div class="why"><strong>Why it matters:</strong> '+esc(h.why||'')+'</div></div>';}
+function renderSpotlight(){var el=document.getElementById('bigtech-spotlight');if(!el)return;var bt=papers.filter(function(p){return p.company&&BIG_TECH.indexOf(p.company)>=0});if(!bt.length){el.hidden=true;el.innerHTML='';return}var names=[];bt.forEach(function(p){if(names.indexOf(p.company)<0)names.push(p.company)});el.hidden=false;el.innerHTML='<strong>Big Tech spotlight</strong> — '+bt.length+' of '+papers.length+' papers this week from '+names.map(esc).join(', ')+'.';}
+function renderHighlights(){var el=document.getElementById('highlights-list');var list=sortedHighlights();if(!list.length){el.innerHTML=empty('No highlights yet. The first Weekly Highlight will appear here after the next weekly update.');return}el.innerHTML=list.map(function(h){var p=resolveHighlight(h);if(!p)return '';return '<div class="archive-item"><p class="archive-week"><span class="badge week-badge">'+esc(h.week||'')+'</span></p>'+card(p)+'<p class="why-note"><strong>Why it matters:</strong> '+esc(h.why||'')+'</p></div>'}).join('');}
+function renderDigest(){renderHighlight();renderSpotlight();var list=applyFilters();var el=document.getElementById('digest-list');if(!papers.length){el.innerHTML=empty('No papers yet for this week. Check back after the next weekly update, or see the Most Cited tab.');return}if(!list.length){el.innerHTML=empty('No papers match these filters. Try clearing a filter.');return}el.innerHTML=list.map(function(p){return card(p)}).join('');}
 function renderCited(){var el=document.getElementById('cited-list');var list=classics.concat(papers).slice().sort(function(a,b){return (b.citations||0)-(a.citations||0)});if(!list.length){el.innerHTML=empty('No most-cited papers yet.');return}el.innerHTML=list.map(function(p){return card(p)}).join('');}
 function renderBlogs(){var el=document.getElementById('blogs-list');if(!blogs.length){el.innerHTML=empty('No blog posts yet. Check back after the next weekly update.');return}el.innerHTML=blogs.map(blogCard).join('');}
 function renderReading(){var el=document.getElementById('reading-list');var saved=loadSaved();var count=document.getElementById('reading-count');count.textContent=saved.length?'('+saved.length+')':'';if(!saved.length){el.innerHTML=empty('Your reading list is empty. Use the Save button on a paper in the Weekly Digest, Most Cited, or Highlights Archive tab to add it here.');return}var items=saved.map(function(s){return allPapers[s.id]}).filter(Boolean);if(!items.length){el.innerHTML=empty('Saved papers could not be found in the current data files.');return}el.innerHTML=items.map(function(p){return card(p,{inReading:true})}).join('');}
 function renderAll(){renderDigest();renderCited();renderBlogs();renderHighlights();renderReading();}
-function buildFilters(){var tf=document.getElementById('topic-filter');CANONICAL_TOPICS.forEach(function(t){var lab=document.createElement('label');var cb=document.createElement('input');cb.type='checkbox';cb.value=t;cb.addEventListener('change',renderDigest);lab.appendChild(cb);lab.appendChild(document.createTextNode(t));tf.appendChild(lab);});
-var companies=[];papers.concat(classics).forEach(function(p){if(p.company&&companies.indexOf(p.company)<0)companies.push(p.company)});companies.sort();var sel=document.getElementById('company-filter');companies.forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o)});}
+function buildFilters(){var tf=document.getElementById('topic-filter');CANONICAL_TOPICS.forEach(function(t){var lab=document.createElement('label');lab.className='pill topic-pill';var cb=document.createElement('input');cb.type='checkbox';cb.value=t;cb.addEventListener('change',renderDigest);lab.appendChild(cb);lab.appendChild(document.createTextNode(t));tf.appendChild(lab);});var companies=[];papers.concat(classics).forEach(function(p){if(p.company&&companies.indexOf(p.company)<0)companies.push(p.company)});companies.sort();var sel=document.getElementById('company-filter');companies.forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o)});}
 document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.querySelectorAll('main section').forEach(function(s){s.classList.remove('active')});document.getElementById(b.dataset.tab).classList.add('active');});});
 document.querySelectorAll('input[name="ads-filter"]').forEach(function(r){r.addEventListener('change',renderDigest)});
 document.getElementById('company-filter').addEventListener('change',renderDigest);
 document.getElementById('bigtech-only').addEventListener('change',renderDigest);
-document.getElementById('clear-filters').addEventListener('click',function(){document.querySelector('input[name="ads-filter"][value="all"]').checked=true;document.getElementById('company-filter').value='';document.getElementById('bigtech-only').checked=false;document.querySelectorAll('#topic-filter input:checked').forEach(function(i){i.checked=false});renderDigest();});
+document.getElementById('search-filter').addEventListener('input',renderDigest);
+document.getElementById('clear-filters').addEventListener('click',function(){document.querySelector('input[name="ads-filter"][value="all"]').checked=true;document.getElementById('company-filter').value='';document.getElementById('bigtech-only').checked=false;document.getElementById('search-filter').value='';document.querySelectorAll('#topic-filter input:checked').forEach(function(i){i.checked=false});renderDigest();});
 document.addEventListener('click',function(e){var s=e.target.closest('[data-save]');if(s){toggleSave(s.dataset.save);return}var r=e.target.closest('[data-read]');if(r){toggleRead(r.dataset.read);return}var d=e.target.closest('[data-remove]');if(d){removeSaved(d.dataset.remove);return}});
 Promise.all([fetchJson('data/papers.json'),fetchJson('data/classics.json'),fetchJson('data/blogs.json'),fetchJson('data/highlights.json')]).then(function(res){papers=Array.isArray(res[0])?res[0]:[];classics=Array.isArray(res[1])?res[1]:[];blogs=Array.isArray(res[2])?res[2]:[];highlights=Array.isArray(res[3])?res[3]:[];papers.concat(classics).forEach(function(p){if(p&&p.id)allPapers[p.id]=p});highlights.forEach(function(h){var p=resolveHighlight(h);if(p&&p.id)allPapers[p.id]=p});buildFilters();renderAll();});
 </script>
