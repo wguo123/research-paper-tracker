@@ -2,43 +2,422 @@
   {
     "id": "1606.07792",
     "title": "Wide & Deep Learning for Recommender Systems",
-    "authors": ["Heng-Tze Cheng", "Levent Koc", "Jeremiah Harmsen", "Tal Shaked", "Tushar Chandra", "Hrishi Aradhye", "Glen Anderson", "Greg Corrado", "Wei Chai", "Mustafa Ispir", "Rohan Anil", "Zakaria Haque", "Lichan Hong", "Vihan Jain", "Xiaobing Liu", "Hemal Shah"],
+    "authors": [
+      "Heng-Tze Cheng",
+      "Levent Koc",
+      "Jeremiah Harmsen",
+      "Tal Shaked",
+      "Tushar Chandra",
+      "Hrishi Aradhye",
+      "Glen Anderson",
+      "Greg Corrado",
+      "Wei Chai",
+      "Mustafa Ispir",
+      "Rohan Anil",
+      "Zakaria Haque",
+      "Lichan Hong",
+      "Vihan Jain",
+      "Xiaobing Liu",
+      "Hemal Shah"
+    ],
     "company": "Google",
-    "topics": ["Ranking", "CTR/CVR Prediction", "Representation Learning"],
+    "topics": [
+      "Ranking",
+      "CTR/CVR Prediction",
+      "Representation Learning"
+    ],
     "ads": false,
-    "summary": "Wide & Deep learning jointly trains a wide linear model for memorisation and a deep neural network for generalisation. It was deployed in Google Play app recommendations and improved app acquisition in online experiments. The paper remains a standard starting point for industrial recommender and ads ranking systems.",
-    "citations": 5800,
+    "summary": "Innovation: jointly trains a wide linear model (memorisation of feature crosses) with a deep network (generalisation). Why it matters: the template for industrial ranking systems, deployed first in Google Play and copied across ads ranking stacks.",
+    "citations": 4437,
     "url": "https://arxiv.org/abs/1606.07792",
     "pdf": "https://arxiv.org/pdf/1606.07792",
     "published": "2016-06-24",
     "week": "2016-W25"
   },
   {
+    "id": "10.1145/2959100.2959190",
+    "title": "Deep Neural Networks for YouTube Recommendations",
+    "authors": [
+      "Paul Covington",
+      "Jay Adams",
+      "Emre Sargin"
+    ],
+    "company": "Google",
+    "topics": [
+      "Retrieval",
+      "Ranking",
+      "Sequence Modeling"
+    ],
+    "ads": false,
+    "summary": "Innovation: the two-stage deep candidate-generation + deep ranking design for YouTube, trained on watch history at billion-user scale. Why it matters: defined the retrieve-then-rank architecture that industrial recommendation (and ads) systems still follow. Note: RecSys '16 paper, not on arXiv — link goes to the DOI.",
+    "citations": 4346,
+    "url": "https://doi.org/10.1145/2959100.2959190",
+    "pdf": "https://doi.org/10.1145/2959100.2959190",
+    "published": "2016-09-15",
+    "week": "2016-W37"
+  },
+  {
     "id": "1703.04247",
     "title": "DeepFM: A Factorization-Machine based Neural Network for CTR Prediction",
-    "authors": ["Huifeng Guo", "Ruiming Tang", "Yunming Ye", "Zhenguo Li", "Xiuqiang He"],
+    "authors": [
+      "Huifeng Guo",
+      "Ruiming Tang",
+      "Yunming Ye",
+      "Zhenguo Li",
+      "Xiuqiang He"
+    ],
     "company": "Huawei",
-    "topics": ["CTR/CVR Prediction", "Representation Learning", "Ranking"],
+    "topics": [
+      "CTR/CVR Prediction",
+      "Representation Learning",
+      "Ranking"
+    ],
     "ads": true,
-    "summary": "DeepFM combines factorisation machines with deep neural networks to learn both low- and high-order feature interactions for click-through-rate prediction. It needs no manual feature engineering and outperformed logistic regression, FM, and other deep models on Criteo and MovieLens data. It is widely used as a baseline for ads CTR modelling.",
-    "citations": 3100,
+    "summary": "Innovation: DeepFM shares embeddings between a factorisation machine and a deep network to learn low- and high-order feature interactions end to end. Why it matters: a standard CTR-prediction baseline for ads ranking.",
+    "citations": 3347,
     "url": "https://arxiv.org/abs/1703.04247",
     "pdf": "https://arxiv.org/pdf/1703.04247",
-    "published": "2017-03-14",
+    "published": "2017-03-13",
     "week": "2017-W11"
   },
   {
-    "id": "1609.01010",
-    "title": "Deep Neural Networks for YouTube Recommendations",
-    "authors": ["Paul Covington", "Jay Adams", "Emre Sargin"],
-    "company": "Google",
-    "topics": ["Sequence Modeling", "Ranking", "Retrieval"],
+    "id": "1706.06978",
+    "title": "Deep Interest Network for Click-Through Rate Prediction",
+    "authors": [
+      "Guorui Zhou",
+      "Chengru Song",
+      "Xiaoqiang Zhu",
+      "Ying Fan",
+      "Han Zhu",
+      "Xiao Ma",
+      "Yanghui Yan",
+      "Junqi Jin",
+      "Han Li",
+      "Kun Gai"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "CTR/CVR Prediction",
+      "User Understanding",
+      "Targeting"
+    ],
+    "ads": true,
+    "summary": "Innovation: DIN's local activation unit weights each historical behaviour by its relevance to the candidate ad. Why it matters: founded attention-based user-interest modelling for CTR prediction in ads.",
+    "citations": 2534,
+    "url": "https://arxiv.org/abs/1706.06978",
+    "pdf": "https://arxiv.org/pdf/1706.06978",
+    "published": "2017-06-21",
+    "week": "2017-W25"
+  },
+  {
+    "id": "1809.03672",
+    "title": "Deep Interest Evolution Network for Click-Through Rate Prediction",
+    "authors": [
+      "Guorui Zhou",
+      "Na Mou",
+      "Ying Fan",
+      "Qi Pi",
+      "Weijie Bian",
+      "Chang Zhou",
+      "Xiaoqiang Zhu",
+      "Kun Gai"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "CTR/CVR Prediction",
+      "Sequence Modeling",
+      "User Understanding"
+    ],
+    "ads": true,
+    "summary": "Innovation: DIEN adds an interest-evolution layer (AUGRU) that models how user interests drift over time. Why it matters: sequential interest evolution became a core ingredient of ads CTR models.",
+    "citations": 1462,
+    "url": "https://arxiv.org/abs/1809.03672",
+    "pdf": "https://arxiv.org/pdf/1809.03672",
+    "published": "2018-09-11",
+    "week": "2018-W37"
+  },
+  {
+    "id": "1906.00091",
+    "title": "Deep Learning Recommendation Model for Personalization and Recommendation Systems",
+    "authors": [
+      "Maxim Naumov",
+      "Dheevatsa Mudigere",
+      "Hao-Jun Michael Shi",
+      "Jianyu Huang",
+      "Narayanan Sundaraman",
+      "Jongsoo Park",
+      "Xiaodong Wang",
+      "Udit Gupta",
+      "Carole-Jean Wu",
+      "Alisson G. Azzolini",
+      "Dmytro Dzhulgakov",
+      "Andrey Mallevich",
+      "Ilia Cherniavskii",
+      "Yinghai Lu",
+      "Raghuraman Krishnamoorthi",
+      "Ansha Yu",
+      "Volodymyr Kondratenko",
+      "Stephanie Pereira",
+      "Xianjie Chen",
+      "Wenlin Chen",
+      "Vijay Rao",
+      "Bill Jia",
+      "Liang Xiong",
+      "Misha Smelyanskiy"
+    ],
+    "company": "Meta",
+    "topics": [
+      "Ranking",
+      "Representation Learning",
+      "CTR/CVR Prediction"
+    ],
     "ads": false,
-    "summary": "YouTube's recommendation system uses deep candidate generation followed by a deep ranking network, learning from user watch history, search, and context. The two-stage design scales to billions of videos and users while personalising recommendations. It is one of the most-cited descriptions of a production recommender system.",
-    "citations": 4100,
-    "url": "https://arxiv.org/abs/1609.01010",
-    "pdf": "https://arxiv.org/pdf/1609.01010",
-    "published": "2016-09-03",
-    "week": "2016-W35"
+    "summary": "Innovation: DLRM systematised embedding tables plus MLP interaction for personalisation at Meta scale, with model parallelism for huge embeddings. Why it matters: the reference architecture and benchmark for large-scale recommendation and ads ranking hardware/software design.",
+    "citations": 1052,
+    "url": "https://arxiv.org/abs/1906.00091",
+    "pdf": "https://arxiv.org/pdf/1906.00091",
+    "published": "2019-05-31",
+    "week": "2019-W22"
+  },
+  {
+    "id": "2008.13535",
+    "title": "DCN V2: Improved Deep & Cross Network and Practical Lessons for Web-scale Learning to Rank Systems",
+    "authors": [
+      "Ruoxi Wang",
+      "Rakesh Shivanna",
+      "Derek Z. Cheng",
+      "Sagar Jain",
+      "Dong Lin",
+      "Lichan Hong",
+      "Ed H. Chi"
+    ],
+    "company": "Google",
+    "topics": [
+      "Ranking",
+      "CTR/CVR Prediction",
+      "Representation Learning"
+    ],
+    "ads": true,
+    "summary": "Innovation: DCN-V2's improved cross network learns explicit feature crosses in a scalable, production-friendly form. Why it matters: widely deployed for web-scale learning-to-rank, including ads.",
+    "citations": 1025,
+    "url": "https://arxiv.org/abs/2008.13535",
+    "pdf": "https://arxiv.org/pdf/2008.13535",
+    "published": "2020-08-19",
+    "week": "2020-W34"
+  },
+  {
+    "id": "1904.08030",
+    "title": "Multi-Interest Network with Dynamic Routing for Recommendation at Tmall",
+    "authors": [
+      "Chao Li",
+      "Zhiyuan Liu",
+      "Mengmeng Wu",
+      "Yuchi Xu",
+      "Pipei Huang",
+      "Huan Zhao",
+      "Guoliang Kang",
+      "Qiwei Chen",
+      "Wei Li",
+      "Dik Lun Lee"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "Retrieval",
+      "User Understanding",
+      "Representation Learning"
+    ],
+    "ads": false,
+    "summary": "Innovation: MIND uses capsule-style dynamic routing to extract multiple interest vectors per user for candidate generation at Tmall. Why it matters: multi-interest retrieval is now standard in industrial candidate generation.",
+    "citations": 593,
+    "url": "https://arxiv.org/abs/1904.08030",
+    "pdf": "https://arxiv.org/pdf/1904.08030",
+    "published": "2019-04-17",
+    "week": "2019-W16"
+  },
+  {
+    "id": "2305.05065",
+    "title": "Recommender Systems with Generative Retrieval",
+    "authors": [
+      "Shashank Rajput",
+      "Nikhil Mehta",
+      "Anima Singh",
+      "Raghunandan H. Keshavan",
+      "Trung Vu",
+      "Lukasz Heldt",
+      "Lichan Hong",
+      "Yi Tay",
+      "Vinh Q. Tran",
+      "Jonah Samost",
+      "Maciej Kula",
+      "Ed H. Chi",
+      "Maheswaran Sathiamoorthy"
+    ],
+    "company": "Google",
+    "topics": [
+      "Generative Retrieval",
+      "Retrieval",
+      "Representation Learning"
+    ],
+    "ads": false,
+    "summary": "Innovation: TIGER generates semantic IDs autoregressively to retrieve items, replacing embedding-ANN retrieval with a generative model. Why it matters: started the generative retrieval line that industry recsys and ads systems are now adopting.",
+    "citations": 567,
+    "url": "https://arxiv.org/abs/2305.05065",
+    "pdf": "https://arxiv.org/pdf/2305.05065",
+    "published": "2023-05-08",
+    "week": "2023-W19"
+  },
+  {
+    "id": "2006.05639",
+    "title": "Search-based User Interest Modeling with Lifelong Sequential Behavior Data for Click-Through Rate Prediction",
+    "authors": [
+      "Pi Qi",
+      "Xiaoqiang Zhu",
+      "Guorui Zhou",
+      "Yujing Zhang",
+      "Zhe Wang",
+      "Lejian Ren",
+      "Ying Fan",
+      "Kun Gai"
+    ],
+    "company": "Alibaba",
+    "topics": [
+      "CTR/CVR Prediction",
+      "User Understanding",
+      "Retrieval"
+    ],
+    "ads": true,
+    "summary": "Innovation: SIM searches lifelong behaviour sequences (thousands of actions) with a two-stage search-then-attend design for CTR prediction. Why it matters: made lifelong user behaviour usable in production ads ranking.",
+    "citations": 536,
+    "url": "https://arxiv.org/abs/2006.05639",
+    "pdf": "https://arxiv.org/pdf/2006.05639",
+    "published": "2020-06-10",
+    "week": "2020-W24"
+  },
+  {
+    "id": "2402.17152",
+    "title": "Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations",
+    "authors": [
+      "Jiaqi Zhai",
+      "Lucy Liao",
+      "Xing Liu",
+      "Yueming Wang",
+      "Rui Li",
+      "Xuan Cao",
+      "Leon Gao",
+      "Zhaojie Gong",
+      "Fangda Gu",
+      "Michael He",
+      "Yinghai Lu",
+      "Yu Shi"
+    ],
+    "company": "Meta",
+    "topics": [
+      "Generative Retrieval",
+      "Sequence Modeling",
+      "Foundation Models"
+    ],
+    "ads": false,
+    "summary": "Innovation: Meta's HSTU treats recommendation as generative sequence transduction over user action histories, scaling to trillion parameters. Why it matters: Meta's flagship generative recommendation model — the reference design for generative ranking/retrieval in production, including ads surfaces.",
+    "citations": 441,
+    "url": "https://arxiv.org/abs/2402.17152",
+    "pdf": "https://arxiv.org/pdf/2402.17152",
+    "published": "2024-02-27",
+    "week": "2024-W09"
+  },
+  {
+    "id": "2502.18965",
+    "title": "OneRec: Unifying Retrieve and Rank with Generative Recommender and Iterative Preference Alignment",
+    "authors": [
+      "Jiaxin Deng",
+      "Shiyao Wang",
+      "Kuo Cai",
+      "Lejian Ren",
+      "Qigen Hu",
+      "Weifeng Ding",
+      "Qiang Luo",
+      "Guorui Zhou"
+    ],
+    "company": "Kuaishou",
+    "topics": [
+      "Generative Retrieval",
+      "Retrieval",
+      "Ranking"
+    ],
+    "ads": false,
+    "summary": "Innovation: OneRec unifies retrieval and ranking in a single generative model with iterative preference alignment. Why it matters: an end-to-end generative alternative to the classic cascade, deployed at Kuaishou scale.",
+    "citations": 408,
+    "url": "https://arxiv.org/abs/2502.18965",
+    "pdf": "https://arxiv.org/pdf/2502.18965",
+    "published": "2025-02-26",
+    "week": "2025-W09"
+  },
+  {
+    "id": "2403.02545",
+    "title": "Wukong: Towards a Scaling Law for Large-Scale Recommendation",
+    "authors": [
+      "Buyun Zhang",
+      "Liang Luo",
+      "Yuxin Chen",
+      "Jade Nie",
+      "Xi Liu",
+      "Daifeng Guo",
+      "Yanli Zhao",
+      "Shen Li",
+      "Yuchen Hao",
+      "Yantao Yao",
+      "Guna Lakshminarayanan",
+      "Ellie Dingqiao Wen",
+      "Jongsoo Park",
+      "Maxim Naumov",
+      "Wenlin Chen"
+    ],
+    "company": "Meta",
+    "topics": [
+      "Representation Learning",
+      "Ranking",
+      "Foundation Models"
+    ],
+    "ads": false,
+    "summary": "Innovation: Wukong's stacked factorisation machines show recommendation models follow scaling laws like LLMs. Why it matters: Meta's evidence that ranking quality keeps improving with model/data scale.",
+    "citations": 188,
+    "url": "https://arxiv.org/abs/2403.02545",
+    "pdf": "https://arxiv.org/pdf/2403.02545",
+    "published": "2024-03-04",
+    "week": "2024-W10"
+  },
+  {
+    "id": "2203.11014",
+    "title": "DHEN: A Deep and Hierarchical Ensemble Network for Large-Scale Click-Through Rate Prediction",
+    "authors": [
+      "Buyun Zhang",
+      "Liang Luo",
+      "Xi Liu",
+      "Jay Li",
+      "Zeliang Chen",
+      "Weilin Zhang",
+      "Xiaohan Wei",
+      "Yuchen Hao",
+      "Michael Tsang",
+      "Wenjun Wang",
+      "Yang Liu",
+      "Huayu Li",
+      "Yasmine Badr",
+      "Jongsoo Park",
+      "Jiyan Yang",
+      "Dheevatsa Mudigere",
+      "Ellie Wen"
+    ],
+    "company": "Meta",
+    "topics": [
+      "CTR/CVR Prediction",
+      "Ranking"
+    ],
+    "ads": true,
+    "summary": "Innovation: DHEN ensembles diverse interaction modules hierarchically for large-scale CTR prediction at Meta. Why it matters: a production Meta ads-ranking architecture showing ensembling diverse interaction learners beats single architectures.",
+    "citations": 24,
+    "url": "https://arxiv.org/abs/2203.11014",
+    "pdf": "https://arxiv.org/pdf/2203.11014",
+    "published": "2022-03-11",
+    "week": "2022-W10"
   }
 ]
